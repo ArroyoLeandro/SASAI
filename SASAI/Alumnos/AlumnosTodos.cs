@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace SASAI
 {
-    public partial class Login : Form
+    public partial class AlumnosTodos : Form
     {
-        public Login()
+        public AlumnosTodos()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AlumnosF buscar = new AlumnosF();
+
+            buscar.MdiParent = Formularios.DIOS;
+            buscar.Show();
         }
     }
 }

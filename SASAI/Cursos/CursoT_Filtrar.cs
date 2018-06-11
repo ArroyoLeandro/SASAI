@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SASAI
 {
-    public partial class Login : Form
+    public partial class CursoT_Filtrar : Form
     {
-        public Login()
+        public CursoT_Filtrar()
         {
             InitializeComponent();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

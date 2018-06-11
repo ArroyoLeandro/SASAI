@@ -9,18 +9,9 @@ F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.csproj.GenerateResource.Cac
 F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
 F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.exe
 F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.pdb
-F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Preinscripciones.resources
 F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Preinscripciones_Carga.resources
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe.config
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.pdb
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csprojResolveAssemblyReference.cache
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Form1.resources
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Login.resources
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Preinscripciones.resources
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Preinscripciones_Carga.resources
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Properties.Resources.resources
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.GenerateResource.Cache
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.exe
-C:\Users\Administrador\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.pdb
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.CursoT.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.AlumnosF.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Interesados.resources

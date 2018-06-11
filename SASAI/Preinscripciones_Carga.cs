@@ -16,10 +16,5 @@ namespace SASAI
         {
             InitializeComponent();
         }
-
-        private void Preinscripciones_Carga_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

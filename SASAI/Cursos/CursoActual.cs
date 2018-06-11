@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SASAI
 {
-    public partial class Login : Form
+    public partial class CursoActual : Form
     {
-        public Login()
+        public CursoActual()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

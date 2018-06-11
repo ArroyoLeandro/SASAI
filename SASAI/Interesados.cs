@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SASAI
 {
-    public partial class Login : Form
+    public partial class Interesados : Form
     {
-        public Login()
+        public Interesados()
         {
             InitializeComponent();
         }
