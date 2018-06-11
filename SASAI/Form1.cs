@@ -16,24 +16,16 @@ namespace SASAI
         {
             InitializeComponent();
         }
-
-
-       
-
-
+    
         private void cursoActualToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CursoActual Ce = new CursoActual();
-            Ce.MdiParent = Formularios.DIOS;
-            Ce.Show();
-
+           
+            Formularios.AbrirFormularioPadre(new CursoActual());
+            
         }
 
         private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-           
-
 
 
         }
@@ -45,9 +37,8 @@ namespace SASAI
 
         private void todosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CursoT cursos = new CursoT();
-            cursos.MdiParent = Formularios.DIOS;
-            cursos.Show();
+            Formularios.AbrirFormularioPadre(new CursoT());
+
         }
 
         private void buscarXDNIToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,33 +63,27 @@ namespace SASAI
 
         private void interesadosToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Interesados inte = new Interesados();
-            inte.MdiParent = Formularios.DIOS;
-            inte.Show();
+            Formularios.AbrirFormularioPadre(new Interesados());
+
 
         }
 
         private void todosLosAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AlumnosTodos alumnos = new AlumnosTodos();
+            Formularios.AbrirFormularioPadre(new AlumnosTodos());
 
-            alumnos.MdiParent = Formularios.DIOS;
-            alumnos.Show();
         }
 
         private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Materias Mat = new Materias();
-            Mat.MdiParent = Formularios.DIOS;
-            Mat.Show();
+            Formularios.AbrirFormularioPadre(new Materias());
+
 
         }
 
         private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsuariosModificacion usuarios_mod = new UsuariosModificacion();
-            usuarios_mod.MdiParent = Formularios.DIOS;
-            usuarios_mod.Show();
+            Formularios.AbrirFormularioPadre(new UsuariosModificacion());
 
         }
     }

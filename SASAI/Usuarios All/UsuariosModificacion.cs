@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace SASAI
 {
-    public partial class AlumnosF : Form
+    public partial class UsuariosModificacion : Form
     {
-        public AlumnosF()
+        public UsuariosModificacion()
         {
             InitializeComponent();
-        }
-
-        private void AlumnosF_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +22,7 @@ namespace SASAI
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void lbl_passAnterior_Click(object sender, EventArgs e)
         {
 
         }

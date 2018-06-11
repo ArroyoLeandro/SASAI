@@ -35,3 +35,6 @@ C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.exe
 C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.pdb
 C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.Materias.resources
 C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.CursoActual.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Materias.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources

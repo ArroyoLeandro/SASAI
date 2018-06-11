@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SASAI
 {
@@ -17,8 +18,43 @@ namespace SASAI
             return DIOS;
         }
 
+        public static void cerrarFormularioHijo()
+        {
+            for (int i = 0; i < DIOS.MdiChildren.Length; i++)
+            {
+                
+                DIOS.MdiChildren[i].Close();
+            }
+        }
 
-    
+        public static void AbrirFormularioPadre (Form x) {
+
+            cerrarFormularioHijo();
+            x.MdiParent = DIOS;
+            x.WindowState = FormWindowState.Maximized;
+            x.ControlBox = false;
+            x.ShowInTaskbar = false;
+            x.FormBorderStyle = FormBorderStyle.FixedDialog;
+            //x.AutoScaleDimensions = new System.Drawing.SizeF(DIOS.Size.Width,DIOS.Size.Height);
+            //x.PerformAutoScale();
+            x.Show();
+            
+
+
+        }
+        public static void AbrirFormularioHijos(Form x)
+        {
+
+           
+               
+            
+            x.ShowDialog();
+
+
+        }
+
+
+
 
     }
 }
