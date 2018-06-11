@@ -85,5 +85,21 @@ namespace SASAI
             alumnos.MdiParent = Formularios.DIOS;
             alumnos.Show();
         }
+
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materias Mat = new Materias();
+            Mat.MdiParent = Formularios.DIOS;
+            Mat.Show();
+
+        }
+
+        private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuariosModificacion usuarios_mod = new UsuariosModificacion();
+            usuarios_mod.MdiParent = Formularios.DIOS;
+            usuarios_mod.Show();
+
+        }
     }
 }
