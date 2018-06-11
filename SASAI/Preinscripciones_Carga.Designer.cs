@@ -68,6 +68,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Preinscripciones_Carga";
             this.Text = "Preinscripciones_Carga";
+            this.Load += new System.EventHandler(this.Preinscripciones_Carga_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

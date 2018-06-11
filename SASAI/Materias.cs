@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SASAI
 {
-    public partial class Preinscripciones_Carga : Form
+    public partial class Materias : Form
     {
-        public Preinscripciones_Carga()
+        public Materias()
         {
             InitializeComponent();
-        }
-
-        private void Preinscripciones_Carga_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

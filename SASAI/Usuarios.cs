@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace SASAI
 {
-    public partial class Preinscripciones_Carga : Form
+    public partial class Usuarios : Form
     {
-        public Preinscripciones_Carga()
+        public Usuarios()
         {
             InitializeComponent();
         }
 
-        private void Preinscripciones_Carga_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_passAnterior_Click(object sender, EventArgs e)
         {
 
         }

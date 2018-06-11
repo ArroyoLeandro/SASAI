@@ -37,7 +37,7 @@ namespace SASAI
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-             // cerrarFormularioHijo();
+            cerrarFormularioHijo();
             Preinscripciones_Carga frm2 = new Preinscripciones_Carga();
             abrirFormularioHijo(frm2);
             

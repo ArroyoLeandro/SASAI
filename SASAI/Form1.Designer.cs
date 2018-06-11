@@ -30,17 +30,17 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursoActualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarXDNIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interesadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preinscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cursoActualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.todosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarXDNIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estadistcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadistcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargaBajaUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlXUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +63,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(808, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // cursosToolStripMenuItem
             // 
@@ -73,6 +74,19 @@
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.cursosToolStripMenuItem.Text = "Cursos";
             // 
+            // cursoActualToolStripMenuItem
+            // 
+            this.cursoActualToolStripMenuItem.Name = "cursoActualToolStripMenuItem";
+            this.cursoActualToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cursoActualToolStripMenuItem.Text = "Actual";
+            this.cursoActualToolStripMenuItem.Click += new System.EventHandler(this.cursoActualToolStripMenuItem_Click);
+            // 
+            // todosToolStripMenuItem
+            // 
+            this.todosToolStripMenuItem.Name = "todosToolStripMenuItem";
+            this.todosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.todosToolStripMenuItem.Text = "Todos";
+            // 
             // alumnosToolStripMenuItem
             // 
             this.alumnosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -80,6 +94,12 @@
             this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
             this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.alumnosToolStripMenuItem.Text = "Alumnos";
+            // 
+            // buscarXDNIToolStripMenuItem
+            // 
+            this.buscarXDNIToolStripMenuItem.Name = "buscarXDNIToolStripMenuItem";
+            this.buscarXDNIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.buscarXDNIToolStripMenuItem.Text = "Buscar";
             // 
             // interesadosToolStripMenuItem
             // 
@@ -101,6 +121,13 @@
             this.preinscripcionToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.preinscripcionToolStripMenuItem.Text = "Preinscripcion";
             // 
+            // exportarToolStripMenuItem
+            // 
+            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarToolStripMenuItem.Text = "Importar";
+            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
+            // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,43 +136,17 @@
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
-            // cursoActualToolStripMenuItem
+            // cambioDeContraseñaToolStripMenuItem
             // 
-            this.cursoActualToolStripMenuItem.Name = "cursoActualToolStripMenuItem";
-            this.cursoActualToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cursoActualToolStripMenuItem.Text = "Actual";
-            this.cursoActualToolStripMenuItem.Click += new System.EventHandler(this.cursoActualToolStripMenuItem_Click);
-            // 
-            // todosToolStripMenuItem
-            // 
-            this.todosToolStripMenuItem.Name = "todosToolStripMenuItem";
-            this.todosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.todosToolStripMenuItem.Text = "Todos";
-            // 
-            // buscarXDNIToolStripMenuItem
-            // 
-            this.buscarXDNIToolStripMenuItem.Name = "buscarXDNIToolStripMenuItem";
-            this.buscarXDNIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.buscarXDNIToolStripMenuItem.Text = "Buscar";
+            this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
+            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de Contraseña";
             // 
             // estadistcasToolStripMenuItem
             // 
             this.estadistcasToolStripMenuItem.Name = "estadistcasToolStripMenuItem";
             this.estadistcasToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.estadistcasToolStripMenuItem.Text = "Estadisticas";
-            // 
-            // exportarToolStripMenuItem
-            // 
-            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportarToolStripMenuItem.Text = "Importar";
-            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
-            // 
-            // cambioDeContraseñaToolStripMenuItem
-            // 
-            this.cambioDeContraseñaToolStripMenuItem.Name = "cambioDeContraseñaToolStripMenuItem";
-            this.cambioDeContraseñaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.cambioDeContraseñaToolStripMenuItem.Text = "Cambio de Contraseña";
             // 
             // administradorToolStripMenuItem
             // 
@@ -161,6 +162,7 @@
             this.cargaBajaUsuarioToolStripMenuItem.Name = "cargaBajaUsuarioToolStripMenuItem";
             this.cargaBajaUsuarioToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.cargaBajaUsuarioToolStripMenuItem.Text = "ABM USUARIOS";
+            this.cargaBajaUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cargaBajaUsuarioToolStripMenuItem_Click);
             // 
             // controlXUsuarioToolStripMenuItem
             // 
