@@ -1,4 +1,5 @@
 
+
 use master
 drop database sasai
 
@@ -115,7 +116,7 @@ Apellido varchar(50)  not null ,
 Email varchar(100)  not null default '',
 Telefono varchar(30)  not null default '0',
 DNIOLD int   not null default '0',
-Turno varchar(60) not null default'Mañana',
+Turno varchar(60) not null default'MaÃ±ana',
 Nacionalidad varchar(60) not null ,
 constraint pk_clavePreinscriptos Primary Key (DNI)
 
@@ -151,7 +152,21 @@ foreign key (usuario,codmov,fecha) references Movimientos (usuario,codmov,fecha)
 -----------
 ---------------------------- procedure
 go
+create procedure VerificarUsuario
+@nombre varchar(20), @contrasena varchar(20)
+as
+
+
+select count (usuario)
+from Usuarios
+where usuario=@nombre and contrasena = @contrasena
+
+go
+
 insert into usuarios (usuario,contrasena,acceso)
 select 'nehuen','123',10
 go
+
+
+VerificarUsuario 'nehuen','123'
 
