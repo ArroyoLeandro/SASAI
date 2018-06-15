@@ -1,8 +1,6 @@
 
 
 use master
-drop database sasai
-
 
 create database SASAI
 go
@@ -167,6 +165,16 @@ insert into usuarios (usuario,contrasena,acceso)
 select 'nehuen','123',10
 go
 
+create procedure EliminarUsuario
+@user varchar(20)
+
+AS
+    DELETE FROM USUARIOS
+    WHERE Usuario=@user
+    RETURN
+    go
+
 
 VerificarUsuario 'nehuen','123'
+
 
