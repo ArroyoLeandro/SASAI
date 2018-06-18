@@ -12,6 +12,7 @@ namespace SASAI
 {
     public partial class AlumnosTodos : Form
     {
+        DataSet ds = new DataSet();
         public AlumnosTodos()
         {
             InitializeComponent();
@@ -23,6 +24,25 @@ namespace SASAI
 
             buscar.MdiParent = Formularios.DIOS;
             buscar.Show();
+        }
+
+        private void AlumnosTodos_Load(object sender, EventArgs e)
+        {
+            AccesoDatos aq = new AccesoDatos();
+            string consulta = "select * from inscriptos";
+            
+
+            aq.cargaTabla("Inscriptos", consulta, ref ds);
+            dataGridView1.DataSource = ds.Tables[0];
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            // dataGridView1.SelectedRows
+            GestionSql aw = new GestionSql();
+          //  falta corregir esto jejejejeje que seria el borrar 1 solo inscripto
+          /// aw.EliminarInscripto("Inscriptos",ds,"EliminarInscripto", dataGridView1.SelectedRows)
         }
     }
 }
