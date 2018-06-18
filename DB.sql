@@ -148,33 +148,78 @@ foreign key (Usuario) references Usuarios (usuario)
 alter table DetalleMov add constraint Fk_DetalleMovxMov
 foreign key (usuario,codmov,fecha) references Movimientos (usuario,codmov,fecha)
 -----------
+-----------------------carga valores tabla
+
+insert into usuarios (usuario,contrasena,acceso)
+select 'nehuen','123',10 union 
+select 'pedron','123',9 union
+select 'leandro','123',8 union
+select 'mariano','123',5 union
+select 'batman','123',7 union
+select 'robin','123',6 
+go
+
+
+go
+
+
 ---------------------------- procedure
 go
+
+--drop procedure Verificarusuario
+go
+
 create procedure VerificarUsuario
-@nombre varchar(20), @contrasena varchar(20)
+@user varchar(20), @contrasena varchar(20), @acceso int
 as
 
 
 select count (usuario)
 from Usuarios
-where usuario=@nombre and contrasena = @contrasena
+where usuario=@user and contrasena = @contrasena
 
 go
-
-insert into usuarios (usuario,contrasena,acceso)
-select 'nehuen','123',10
-go
-
 create procedure EliminarUsuario
-@user varchar(20)
+@user varchar(20), @contra varchar(20),@acceso int
 
 AS
     DELETE FROM USUARIOS
     WHERE Usuario=@user
     RETURN
-    go
+    
+go
+create procedure ActualizarUsuario
+(@user varchar(20), @contra varchar(20),@acceso int )
+
+as
+update Usuarios 
+set 
+contrasena =@contra,
+acceso =@acceso
+
+where usuario =@user
+return 
+go
+create procedure EliminarInscripto (
+@DNI int 
+)
+AS
+    DELETE FROM Inscriptos
+    WHERE DNI=@DNI
+    RETURN
+
+go
+
 
 
 VerificarUsuario 'nehuen','123'
+go
 
+exec ActualizarUsuario 'batman','123',10 
+
+go
+
+select * 
+from Usuarios
+--exec EliminarUsuario 'nehuen'
 
