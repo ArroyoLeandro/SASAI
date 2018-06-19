@@ -50,7 +50,7 @@ namespace SASAI
                     return Comando;
         }
            public static SqlCommand Movimientos (int CodMov,string Usuario,
-            string tablaModificada,string DatoModificado,date Fecha;)
+            string tablaModificada,string DatoModificado, DateTime Fecha)
         {
         
             SqlCommand Comando = new SqlCommand();
@@ -61,7 +61,7 @@ namespace SASAI
             SqlParametros.Value = Usuario;
             SqlParametros = Comando.Parameters.Add("@tablaModificada", SqlDbType.NVarChar,40);
             SqlParametros.Value = tablaModificada;
-               SqlParametros = Comando.Parameters.Add("@DatoModificado", SqlDbType.NvarChar,20);
+               SqlParametros = Comando.Parameters.Add("@DatoModificado", SqlDbType.NVarChar,20);
             SqlParametros.Value = DatoModificado;
                SqlParametros = Comando.Parameters.Add("@fecha", SqlDbType.Date);
             SqlParametros.Value = Fecha;
@@ -69,10 +69,10 @@ namespace SASAI
                     return Comando;
         }
         
-         public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes 
-                                             string Despues, Date fecha)
-         { 
-         SqlComand Comando = new SqlComand();
+         public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes,
+                                             string Despues, DateTime fecha)
+         {
+            SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
              SqlParametros = Comando.Parameters.Add ("@CodMov",SqlDbType.Int);
              SqlParametros.Value = CodMov;
@@ -90,8 +90,8 @@ namespace SASAI
         
         public static SqlCommand MateriasxCurso 
             (string CodMateria  ,string CodCurso  ,string CodEspecialidad )
-         { 
-         SqlComand Comando = new SqlComand();
+         {
+            SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
              SqlParametros = Comando.Parameters.Add ("@CodMateria",SqlDbType.NVarChar,40);
              SqlParametros.Value = CodMateria;
@@ -105,8 +105,8 @@ namespace SASAI
          }
          public static SqlCommand Cursos
             (string CodCurso  ,string FechaInicio  ,string FechaFinal, int Nota_Min,int CapacidadMax )
-         { 
-         SqlComand Comando = new SqlComand();
+         {
+            SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
              SqlParametros = Comando.Parameters.Add ("@CodCurso",SqlDbType.NVarChar,40);
              SqlParametros.Value = CodCurso;
@@ -124,7 +124,8 @@ namespace SASAI
          }
          public static SqlCommand EspecialidadesXCursos
              (string CodCurso  ,string CodEspecialidad  ) 
-         { SqlComand Comando = new SqlComand();
+         {
+            SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
              SqlParametros = Comando.Parameters.Add ("@CodCurso",SqlDbType.NVarChar,40);
              SqlParametros.Value = CodCurso;
@@ -135,7 +136,8 @@ namespace SASAI
          }
     public static SqlCommand Especialidades
              (string nombre   ,string Codespecialidad,int AniosAprox)
-         { SqlComand Comando = new SqlComand();
+         {
+            SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
              SqlParametros = Comando.Parameters.Add ("@Codespecialidad",SqlDbType.NVarChar,40);
              SqlParametros.Value = Codespecialidad ;
@@ -149,7 +151,8 @@ namespace SASAI
         
          public static SqlCommand AlumnosxMateriasxCursos 
              (int DNI,string CodMateria ,string Codcurso,string CodEspecialidad, int NotaMateria )
-         { SqlComand Comando = new SqlComand();
+         {
+            SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
           SqlParametros = Comando.Parameters.Add ("@DNI",SqlDbType.Int);
              SqlParametros.Value = DNI ;
@@ -163,12 +166,13 @@ namespace SASAI
              
          }
         public static SqlCommand Inscriptos 
-             (int DNI,string codcurso  ,int IDinscripto ,string Nombre ,string Apellido
+             (int DNI,string codcurso  ,int IDinscripto ,string Nombre ,string Apellido,
              string Email, string Telefono,bool Const_Analitico,bool Const_Cuil,
              bool Fotoc_DNI, bool Foto4x4, bool Const_Trabajo, int MontoPagar,
-              Date FechaEntregaDoc, string observaciones             )
+              DateTime FechaEntregaDoc, string observaciones             )
             
-         { SqlComand Comando = new SqlComand();
+         {
+            SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
           SqlParametros = Comando.Parameters.Add ("@DNI",SqlDbType.Int);
              SqlParametros.Value = DNI ;
@@ -204,9 +208,9 @@ namespace SASAI
          }
         
          public static SqlCommand Interesados 
-             (string Email,string Nombre,string Apellido,Date FechaConsulta)
+             (string Email,string Nombre,string Apellido, DateTime FechaConsulta)
          {
-         SqlComand Comando = new SqlComand();
+         SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
           SqlParametros = Comando.Parameters.Add ("@Email",SqlDbType.NVarChar, 100);
              SqlParametros.Value = Email ;
@@ -223,22 +227,22 @@ namespace SASAI
              (int DNI,string codcurso,string IDinscripto,string Nombre,string Apellido,
               string Email,string Telefono,int DNIOLD,string Turno,string Nacionalidad)
          {
-          SqlComand Comando = new SqlComand();
+          SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
           SqlParametros = Comando.Parameters.Add ("@DNI",SqlDbType.Int);
              SqlParametros.Value = DNI;
           SqlParametros = Comando.Parameters.Add ("@codcurso",SqlDbType.NVarChar, 40);
              SqlParametros.Value = codcurso;
              SqlParametros = Comando.Parameters.Add ("@Idinscripto",SqlDbType.Int);
-             SqlParametros.Value = Idinscripto;
+             SqlParametros.Value = IDinscripto;
              SqlParametros = Comando.Parameters.Add ("@Nombre",SqlDbType.NVarChar, 50);
              SqlParametros.Value = Nombre;
              SqlParametros = Comando.Parameters.Add ("@Apellido",SqlDbType.NVarChar, 50);
-             SqlParametros.Value = apellido;
+             SqlParametros.Value = Apellido;
              SqlParametros = Comando.Parameters.Add ("@Email",SqlDbType.NVarChar, 100);
              SqlParametros.Value = Email;
              SqlParametros = Comando.Parameters.Add ("@Telefono",SqlDbType.NVarChar, 30);
-             SqlParametros.Value = apellido;
+             SqlParametros.Value = Telefono;
              SqlParametros = Comando.Parameters.Add ("@DNIOLD",SqlDbType.Int);
              SqlParametros.Value = DNIOLD;
              SqlParametros = Comando.Parameters.Add ("@Turno",SqlDbType.NVarChar, 60);
