@@ -269,68 +269,7 @@ datediff(partedelafecha,fecha1,fecha2): calcula el intervalo de tiempo
 
 --  FIN FUNCIONES
 
---Ejercicio 6.3
-
-create table Art (
-stock varchar(100)  not null,
-nombre varchar(50)  not null,
-descripcion varchar(50)  not null,
-FechaReg date not null
-)
-
-drop table pedidos
-
-if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'pedidos') -- tambien hay un not exists que hace lo contrario
-
-begin	
-create table pedidos (
-cantidad int not null,
-articulo varchar(50)  not null,
-descripcion varchar(50)  not null,
-FechaReg date not null
-)
-
-end
-go
-
-
-create table proveedores (
-stock varchar(100)  not null,
-Nombre varchar(50)  not null,
-Email varchar(50)  not null,
-RazonSocial varchar(50) not null
-
-)
-
-go
-
-create procedure CREAR_PEDIDO(
-@cantidad int, @arti varchar(50),@desc varchar(50)
-)
-AS
-    INSERT INTO pedidos(cantidad,articulo,descripcion,FechaReg)
-	select @cantidad,@arti, @desc, FechaReg=getdate()
-    
-go
-
-
-exec CREAR_PEDIDO  100,'papa','comida pa el body'
-
-
-
-alter table Art add PuntoPedido int;
-
-
-
-select upper(descripcion), LOWER(articulo), cantidad from pedidos 
-
-
-
-
-select * from Art
-
-
-
+ 
 -- TREIGGER SIRVE PARA EJECUTAR ALGO AUTOMATICAMENTE---  AL EJECUTAR UNA ACTUALIZACION SE EJECUTA ESTE TRIGGER
 CREATE TRIGGER TR_Name  -- NOMBRE ASIGANDO POR MI
 ON pedidos -- EN QUE TABLA SE VA A GUARDAR
@@ -402,6 +341,103 @@ END
 --FIN TRIGGER SEGURIDAD
 
 
+
+
+
+
+--Ejercicio 6.3
+
+create table Art (
+stock varchar(100)  not null,
+nombre varchar(50)  not null,
+descripcion varchar(50)  not null,
+FechaReg date not null
+)
+
+drop table pedidos
+
+if not exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'pedidos') -- tambien hay un not exists que hace lo contrario
+
+begin	
+create table pedidos (
+cantidad int not null,
+articulo varchar(50)  not null,
+descripcion varchar(50)  not null,
+FechaReg date not null
+)
+
+end
+go
+
+
+create table proveedores (
+stock varchar(100)  not null,
+Nombre varchar(50)  not null,
+Email varchar(50)  not null,
+RazonSocial varchar(50) not null
+
+)
+
+go
+
+create procedure CREAR_PEDIDO(
+@cantidad int, @arti varchar(50),@desc varchar(50)
+)
+AS
+    INSERT INTO pedidos(cantidad,articulo,descripcion,FechaReg)
+	select @cantidad,@arti, @desc, FechaReg=getdate()
+    
+go
+
+
+exec CREAR_PEDIDO  100,'papa','comida pa el body'
+
+
+
+alter table Art add PuntoPedido int;
+
+
+
+select upper(descripcion), LOWER(articulo), cantidad from pedidos 
+
+
+
+
+select * from Art
+
+---fin ejercicio
+
+
+
+
+
+-- Ejercicio 6.4
+
+create table DetalleVenta (
+cantidad int not null,
+producto varchar(50)  not null,
+ total float not null,
+precio float not null
+)
+
+
+ALTER TRIGGER SumaTotal
+ON DetalleVenta
+AFTER INSERT
+AS
+BEGIN
+-- SET NOCOUNT ON impide que se
+--generen mensajes de texto
+-- con cada instrucción
+SET NOCOUNT ON;
+INSERT INTO DetalleVenta
+(total = precio*cantidad)
+SELECT Dato1, Dato2, Dato3
+FROM INSERTED  
+ROLLBACK
+END
+
+---fin ejercicio
 
 
 
