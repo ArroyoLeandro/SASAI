@@ -22,8 +22,8 @@ namespace SASAI
         {
             AlumnosF buscar = new AlumnosF();
 
-            buscar.MdiParent = Formularios.DIOS;
-            buscar.Show();
+            //buscar.MdiParent = Formularios.DIOS;
+            Formularios.AbrirFormularioHijos(buscar);
         }
 
         private void AlumnosTodos_Load(object sender, EventArgs e)

@@ -26,8 +26,9 @@ namespace SASAI
 
         private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ImportarExcel imp = new ImportarExcel();
 
-
+            Formularios.AbrirFormularioPadre(imp);
         }
 
         private void Form1_Load(object sender, EventArgs e)

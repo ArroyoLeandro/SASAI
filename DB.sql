@@ -115,8 +115,24 @@ Email varchar(100)  not null default '',
 Telefono varchar(30)  not null default '0',
 DNIOLD int   not null default '0',
 Turno varchar(60) not null default'Mañana',
-Nacionalidad varchar(60) not null ,
+Modalidad varchar(60) not null ,
 constraint pk_clavePreinscriptos Primary Key (DNI)
+
+)
+go
+
+create table PreinscriptosBKP (
+DNI int  not null,
+codcurso varchar(40) not null default '0' ,
+IDinscripto int not null default '0',
+Nombre varchar(50)  not null,
+Apellido varchar(50)  not null ,
+Email varchar(100)  not null default '',
+Telefono varchar(30)  not null default '0',
+DNIOLD int   not null default '0',
+Turno varchar(60) not null default'Mañana',
+Modalidad varchar(60) not null ,
+constraint pk_clavePreinscriptosBKP Primary Key (DNI)
 
 )
 go
@@ -210,16 +226,23 @@ AS
 
 go
 
+create procedure CargaPreinscripto (
+ @DNI int,@codcurso varchar(40),@IDinscripto int,@Nombre varchar(50),@Apellido varchar(50),
+              @Email varchar(100),@Telefono varchar(30),@DNIOLD int,@Turno varchar(60),@Modalidad varchar(60))
+as
 
 
-VerificarUsuario 'nehuen','123'
+insert into Preinscriptos (DNI,codcurso,IDinscripto,Nombre,Apellido,Email,Telefono,DNIOLD,Turno,Modalidad)
+select @DNI,@codcurso,@IDinscripto,@Nombre,@Apellido,@Email,@Telefono,@DNIOLD,@Turno,@Modalidad
+go
+create procedure CrearBKP_Preins 
+as
+insert into PreinscriptosBKP
+select * from Preinscriptos
+
 go
 
-exec ActualizarUsuario 'batman','123',10 
 
-go
 
-select * 
-from Usuarios
---exec EliminarUsuario 'nehuen'
+
 

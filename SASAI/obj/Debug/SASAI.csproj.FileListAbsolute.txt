@@ -80,3 +80,24 @@ G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.pdb
 G:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.exe.config
 G:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.exe
 G:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe.config
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csprojAssemblyReference.cache
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosF.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoActual.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Form1.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Interesados.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Login.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Materias.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.GenerateResource.cache
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.exe
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.ImportarExcel.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Preinscripciones.Confirmacion.resources
