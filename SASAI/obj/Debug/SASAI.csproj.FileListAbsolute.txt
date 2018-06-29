@@ -1,0 +1,149 @@
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\bin\Debug\SASAI.exe.config
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\bin\Debug\SASAI.exe
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\bin\Debug\SASAI.pdb
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.csprojResolveAssemblyReference.cache
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Form1.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Login.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.csproj.GenerateResource.Cache
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.exe
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.pdb
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Preinscripciones_Carga.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.CursoT.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.AlumnosF.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Interesados.resources
+C:\Users\Administrador\Desktop\SASAI\bin\Debug\SASAI.exe.config
+C:\Users\Administrador\Desktop\SASAI\bin\Debug\SASAI.exe
+C:\Users\Administrador\Desktop\SASAI\bin\Debug\SASAI.pdb
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.csprojResolveAssemblyReference.cache
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.AlumnosF.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.CursoActual.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.CursoT.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.Form1.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.Interesados.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.Login.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.Preinscripciones_Carga.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.csproj.GenerateResource.Cache
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.exe
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.pdb
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.Materias.resources
+C:\Users\Administrador\Desktop\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.CursoActual.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.Materias.resources
+F:\PROYECTO GLADYS\SASAI\SASAI\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+F:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.exe.config
+F:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.exe
+F:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.pdb
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.csprojResolveAssemblyReference.cache
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.AlumnosF.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.CursoActual.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.CursoT.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Form1.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Interesados.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Form2.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Login.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Materias.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Preinscripciones_Carga.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.csproj.GenerateResource.Cache
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.exe
+F:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.pdb
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.csprojAssemblyReference.cache
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.AlumnosF.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.CursoActual.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.CursoT.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Form1.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Interesados.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Form2.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Login.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Materias.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Preinscripciones_Carga.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.csproj.GenerateResource.cache
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.exe
+G:\PROYECTO GLADYS\SASAI\obj\Debug\SASAI.pdb
+G:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.exe.config
+G:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.exe
+G:\PROYECTO GLADYS\SASAI\bin\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe.config
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csprojAssemblyReference.cache
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosF.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoActual.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Form1.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Interesados.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Login.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Materias.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.GenerateResource.cache
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.exe
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.ImportarExcel.resources
+D:\Users\nehuen\Desktop\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Preinscripciones.Confirmacion.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe.config
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.pdb
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csprojResolveAssemblyReference.cache
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosF.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoActual.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Form1.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Interesados.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Preinscripciones.Confirmacion.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.ImportarExcel.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Login.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Materias.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.GenerateResource.Cache
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.exe
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.pdb
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\Interop.Office.dll
+F:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.ResolveComReference.cache
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe.config
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.exe
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\bin\Debug\SASAI.pdb
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csprojAssemblyReference.cache
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\Interop.Office.dll
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.ResolveComReference.cache
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosTodos.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.AlumnosF.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoActual.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.CursoT_Filtrar.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Form1.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Interesados.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Preinscripciones.Confirmacion.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.ImportarExcel.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Login.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Materias.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.Properties.Resources.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.UsuariosModificacion.resources
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.GenerateResource.cache
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.exe
+G:\PROYECTO GLADYS\SASAI-branchPrincipal\SASAI\obj\Debug\SASAI.pdb
