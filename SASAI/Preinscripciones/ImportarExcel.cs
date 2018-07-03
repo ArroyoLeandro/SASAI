@@ -102,14 +102,14 @@ namespace SASAI
         {
 
             Preinscripciones.Confirmacion conf = new Preinscripciones.Confirmacion();
-
+            int registros_ok = 0;
             if (conf.ShowDialog()==DialogResult.OK)
            { 
 
             AccesoDatos aq = new AccesoDatos();
             SqlCommand comando = new SqlCommand();
 
-            int registros_ok = 0;
+            
            
            
            
@@ -119,16 +119,22 @@ namespace SASAI
              dataGridView1.Rows[i].Cells[12].Value.ToString(), dataGridView1.Rows[i].Cells[11].Value.ToString(),
              0, dataGridView1.Rows[i].Cells[6].Value.ToString(), dataGridView1.Rows[i].Cells[5].Value.ToString()
             );
-                aq.EjecutarProcedimientoAlmacenado(comando, "CargaPreinscripto");
-                    registros_ok++;
+
+                        registros_ok++;
+                        aq.EjecutarProcedimientoAlmacenado(comando, "CargaPreinscripto");
+
+                       
                 }
                 catch (Exception ex) {
-                        MessageBox.Show(ex.ToString());
+                     //   MessageBox.Show(ex.ToString());
                 }
                             }
 
             MessageBox.Show("Registros cargados correctamente: " + registros_ok );
-                       
+               
+                    Registros.CargarMovimiento("Preinscripciones", "Carga de Preinscripciones", "Carga de Preinscripciones completo", DateTime.Now.ToString());
+                
+
             }
         }
 
@@ -174,7 +180,12 @@ namespace SASAI
 
         private void ImportarExcel_SizeChanged(object sender, EventArgs e)
         {
-            dataGridView1.Height = this.Height - 185;
+            dataGridView1.Height = this.Height - 150;
+
+        }
+
+        private void ImportarExcel_Load(object sender, EventArgs e)
+        {
 
         }
     }

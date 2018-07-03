@@ -117,6 +117,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ImportarExcel";
             this.Text = "ImportarExcel";
+            this.Load += new System.EventHandler(this.ImportarExcel_Load);
             this.SizeChanged += new System.EventHandler(this.ImportarExcel_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

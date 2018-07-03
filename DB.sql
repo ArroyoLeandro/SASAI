@@ -13,20 +13,22 @@ contrasena varchar(50) not null,
 acceso int not null,
 constraint pk_claveUsuarios Primary Key (usuario)
 )
+
 create table Movimientos (
-CodMov int not null,
+CodMov int identity(1,1),
 Usuario varchar (20) not null,
-tablaModificada varchar (40) not null,
-DatoModificado varchar (20) not null ,
-fecha date not null
+tablaModificada varchar (60) not null,
+DatoModificado varchar (80) not null ,
+fecha date not null,
+Antes varchar (100) not null,
+Despues varchar (100) not null,
 constraint pk_claveMovimientos Primary Key (Usuario,Codmov,fecha)
 )
 
 create table DetalleMov (
 CodMov int not null,
 Usuario varchar (20) not null,
-Antes varchar (100) not null,
-Despues varchar (100) not null,
+
 fecha date not null 
 constraint pk_claveDetalleMov primary key (codmov,Usuario,fecha)
 )
@@ -161,20 +163,18 @@ foreign key (DNI) references Inscriptos (DNI)
 ----------- tabla Movimientos
 alter table Movimientos add constraint Fk_MovimientosxUsuario
 foreign key (Usuario) references Usuarios (usuario)
------------ tabla DetalleMov
----error aca
-alter table DetalleMov add constraint Fk_DetalleMovxMov
-foreign key (usuario,codmov,fecha) references Movimientos (usuario,codmov,fecha)
------------
+
 -----------------------carga valores tabla
 
 insert into usuarios (usuario,contrasena,acceso)
+select 'admin','',6 union
 select 'nehuen','123',10 union 
 select 'pedron','123',9 union
 select 'leandro','123',8 union
 select 'mariano','123',5 union
 select 'batman','123',7 union
-select 'robin','123',6 
+select 'robin','123',6  
+
 go
 
 
@@ -187,15 +187,16 @@ go
 --drop procedure Verificarusuario
 go
 create procedure VerificarUsuario
-@user varchar(20), @contrasena varchar(20), @acceso int
+@user varchar(20), @contra varchar(20), @acceso int
 as
 
 
 select count (usuario)
 from Usuarios
-where usuario=@user and contrasena = @contrasena
+where usuario=@user and contrasena = @contra
 
 go
+
 create procedure EliminarUsuario
 @user varchar(20), @contra varchar(20),@acceso int
 
@@ -214,6 +215,16 @@ set
 contrasena =@contra,
 acceso =@acceso
 
+where usuario =@user
+return 
+go
+create procedure UsuarioCambioContra
+(@user varchar(20), @contra varchar(20),@acceso int )
+
+as
+update Usuarios 
+set 
+contrasena =@contra
 where usuario =@user
 return 
 go
@@ -251,6 +262,33 @@ exec CrearBKP_Preins @DNI ,@codcurso ,@IDinscripto ,@Nombre ,@Apellido ,
 
 go
 
+--use master drop database sasai
 
-select * 
-from Usuarios
+create procedure CargaMovimiento (
+/*CodMov int not null,
+Usuario varchar (20) not null,
+tablaModificada varchar (60) not null,
+DatoModificado varchar (80) not null ,
+fecha date not null*/
+@Usuario varchar(20),@tablaModificada varchar(60),
+@DatoModificado varchar(80),@Antes varchar(100),@despues varchar (100)
+)
+
+as
+
+insert into Movimientos (Usuario,tablaModificada,DatoModificado,Antes,Despues,fecha)
+select @Usuario,@tablaModificada,@DatoModificado,@Antes,@despues, GETDATE()
+
+
+
+
+go
+
+
+select *
+from Preinscriptos
+
+select *
+from Movimientos
+
+delete Preinscriptos

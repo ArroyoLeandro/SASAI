@@ -13,15 +13,24 @@ namespace SASAI
 
         String rutaSasai =
     "Data Source=localhost\\sqlexpress;Initial Catalog=sasai;Integrated Security=True";
+       
 
         public AccesoDatos()
         {
-            // TODO: Agregar aquí la lógica del constructor
+     
+        }
+
+        public void ConfigurarProcedure(ref SqlCommand comando, string consulta)
+        {
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = consulta;
+
+
         }
 
         public SqlConnection ObtenerConexion()
         {
-            SqlConnection cn = new SqlConnection(rutaSasai);
+           SqlConnection cn = new SqlConnection(rutaSasai);
             try
             {
                 cn.Open();
@@ -52,6 +61,9 @@ namespace SASAI
             SqlDataAdapter adp = ObtenerAdaptador(Sql, cn);
             adp.Fill(ds, NombreTabla);
         }
+
+        
+
 
         public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String NombreSP)
         {

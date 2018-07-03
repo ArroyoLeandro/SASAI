@@ -84,7 +84,13 @@ namespace SASAI
 
         private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.AbrirFormularioPadre(new UsuariosModificacion());
+            UsuariosModificacion ar = new UsuariosModificacion();
+            Formularios.AbrirFormularioHijos(ar);
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
     }

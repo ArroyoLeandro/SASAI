@@ -17,37 +17,65 @@ namespace SASAI
         public Login()
         {
             InitializeComponent();
+            Txt_Contra.PasswordChar = '*';
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try {
-                SqlConnection cn = new SqlConnection();
-                AccesoDatos aq = new AccesoDatos();
-                cn = aq.ObtenerConexion();
-            SqlCommand comando = new SqlCommand();
-            comando = DatosSP.Usuarios(Txt_Usuario.Text,Txt_Contra.Text);
+            AccesoDatos conexion = new AccesoDatos();
 
-                //  MessageBox.Show(aq.EjecutarProcedimientoAlmacenado(comando, "VerificarUsuario").ToString());
+            string consulta = "VerificarUsuario";
+           SqlCommand comando = new SqlCommand();
+           
 
-                comando.CommandText = "select * from usuarios where usuario = '" + Txt_Usuario.Text + "' " +" and contrasena = '" + Txt_Contra.Text + "'";
-                comando.Connection = cn;
+            comando = DatosSP.Usuarios(Txt_Usuario.Text, Txt_Contra.Text, 2);
+            conexion.ConfigurarProcedure(ref comando, consulta);
+            comando.Connection = conexion.ObtenerConexion();
             
+            SqlDataReader reader=comando.ExecuteReader();
+           
+         
+            while (reader.Read())
+            {
 
-                SqlDataReader dr = comando.ExecuteReader();
-
-              //  MessageBox.Show(comando.CommandText);
-                 while (dr.Read()==true) 
-                 {
+                if (int.Parse(reader[0].ToString())==1)
+                {
+                    Formularios.Usuario = Txt_Usuario.Text;
                     this.Hide();
                     Formularios.enviarFormulario().ShowDialog();
                     this.Close();
                 }
-                cn.Close();
+
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.ToString());
+
+
+        }
+
+    
+
+        private void Txt_Contra_TextChanged(object sender, EventArgs e)
+        {
+            
+
+            
+        }
+
+        private void Txt_Contra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                button1_Click(sender, e);
             }
+
+            if ((int)e.KeyChar == (int)Keys.RControlKey && (int)e.KeyChar == (int)Keys.Back)
+                Txt_Contra.Clear();
+                
+                    
+           }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

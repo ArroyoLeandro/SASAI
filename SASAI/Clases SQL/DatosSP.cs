@@ -10,7 +10,7 @@ namespace SASAI
 {
     class DatosSP
     {
-
+        
 
         public static SqlCommand Usuarios(string usuario, string contrasena, int val= 1)
         {
@@ -19,7 +19,7 @@ namespace SASAI
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@user", SqlDbType.NVarChar, 20);
             SqlParametros.Value = usuario;
-            SqlParametros = Comando.Parameters.Add("@contrasena", SqlDbType.NVarChar, 50);
+            SqlParametros = Comando.Parameters.Add("@contra", SqlDbType.NVarChar, 50);
             SqlParametros.Value = contrasena;
             SqlParametros = Comando.Parameters.Add("@acceso", SqlDbType.Int);
             SqlParametros.Value = val;
@@ -49,24 +49,24 @@ namespace SASAI
             SqlParametros.Value = int.Parse(monto);
                     return Comando;
         }
-           public static SqlCommand Movimientos (int CodMov,string Usuario,
-            string tablaModificada,string DatoModificado, DateTime Fecha)
+           public static SqlCommand Movimientos (string Usuario,
+            string tablaModificada,string DatoModificado,string antes,string despues)
         {
-        
+            //select @Usuario,@tablaModificada,@DatoModificado,@Antes,@despues, GETDATE()
             SqlCommand Comando = new SqlCommand();
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@CodMov", SqlDbType.Int);
-            SqlParametros.Value = CodMov;
-            SqlParametros = Comando.Parameters.Add("@Usuario", SqlDbType.NVarChar, 20);
+           SqlParametros = Comando.Parameters.Add("@Usuario", SqlDbType.NVarChar, 20);
             SqlParametros.Value = Usuario;
-            SqlParametros = Comando.Parameters.Add("@tablaModificada", SqlDbType.NVarChar,40);
+            SqlParametros = Comando.Parameters.Add("@tablaModificada", SqlDbType.NVarChar,60);
             SqlParametros.Value = tablaModificada;
-               SqlParametros = Comando.Parameters.Add("@DatoModificado", SqlDbType.NVarChar,20);
+            SqlParametros = Comando.Parameters.Add("@DatoModificado", SqlDbType.NVarChar, 80);
             SqlParametros.Value = DatoModificado;
-               SqlParametros = Comando.Parameters.Add("@fecha", SqlDbType.Date);
-            SqlParametros.Value = Fecha;
-               //verificar como coño es el tema de la fecha aca...
-                    return Comando;
+            SqlParametros = Comando.Parameters.Add("@Antes", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = antes;
+            SqlParametros = Comando.Parameters.Add("@despues", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = despues;
+
+            return Comando;
         }
         
          public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes,

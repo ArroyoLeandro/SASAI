@@ -103,6 +103,7 @@
     <Compile Include="Preinscripciones\ImportarExcel.Designer.cs">
       <DependentUpon>ImportarExcel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros.cs" />
     <Compile Include="Usuarios All\Login.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Drawing;
 
 namespace SASAI
 {
@@ -14,7 +14,7 @@ namespace SASAI
     {
        
         public static Form1 DIOS = new Form1();
-
+        public static string Usuario = "";
 
         public static Form1 enviarFormulario()
         {
@@ -46,7 +46,8 @@ namespace SASAI
 
         }
         public static void AbrirFormularioHijos(Form x)
-        {   
+        {
+            
             x.ShowDialog();
             
         }
