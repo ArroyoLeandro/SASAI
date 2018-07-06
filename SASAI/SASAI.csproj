@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\AltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\AltaUsuario.Designer.cs">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\BajayModificacionAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\BajayModificacionAdministrador.Designer.cs">
+      <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases SQL\DatosSP.cs" />
     <Compile Include="Clases SQL\AccesoDatos.cs" />
     <Compile Include="Alumnos\AlumnosTodos.cs">
@@ -103,7 +115,6 @@
     <Compile Include="Preinscripciones\ImportarExcel.Designer.cs">
       <DependentUpon>ImportarExcel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros.cs" />
     <Compile Include="Usuarios All\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +135,12 @@
     <Compile Include="Usuarios All\UsuariosModificacion.Designer.cs">
       <DependentUpon>UsuariosModificacion.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Administrador\AltaUsuario.resx">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrador\BajayModificacionAdministrador.resx">
+      <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\AlumnosTodos.resx">
       <DependentUpon>AlumnosTodos.cs</DependentUpon>
     </EmbeddedResource>

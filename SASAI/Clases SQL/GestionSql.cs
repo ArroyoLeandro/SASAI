@@ -76,7 +76,7 @@ namespace SASAI
 
         
 
-        public static void Usuario_SP(string usuario, string contrasena,string sp)
+     /*   public static void Usuario_SP(string usuario, string contrasena,string sp)
         {
            
             AccesoDatos aq = new AccesoDatos();
@@ -86,7 +86,7 @@ namespace SASAI
 
         }
 
-
+    */
         
         public Boolean InsertarProductosEnBD(String NombreTabla, DataSet ds)
         {

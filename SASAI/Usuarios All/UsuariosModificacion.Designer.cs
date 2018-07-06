@@ -63,6 +63,7 @@
             this.txt_passNueva.Name = "txt_passNueva";
             this.txt_passNueva.Size = new System.Drawing.Size(231, 20);
             this.txt_passNueva.TabIndex = 2;
+            this.txt_passNueva.TextChanged += new System.EventHandler(this.txt_passNueva_TextChanged);
             // 
             // txt_passNuevaConfirm
             // 

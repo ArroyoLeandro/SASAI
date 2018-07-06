@@ -9,25 +9,9 @@ using System.Data.SqlClient;
 namespace SASAI
 {
     class DatosSP
-    {
-        
+    {        
 
-        public static SqlCommand Usuarios(string usuario, string contrasena, int val= 1)
-        {
-
-            SqlCommand Comando = new SqlCommand();
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@user", SqlDbType.NVarChar, 20);
-            SqlParametros.Value = usuario;
-            SqlParametros = Comando.Parameters.Add("@contra", SqlDbType.NVarChar, 50);
-            SqlParametros.Value = contrasena;
-            SqlParametros = Comando.Parameters.Add("@acceso", SqlDbType.Int);
-            SqlParametros.Value = val;
-
-
-            return Comando;
-        }
-
+       
         public static void Inscriptos(ref SqlCommand Comando, DataRow fila)
         {
             SqlParameter SqlParametros = new SqlParameter();
@@ -49,27 +33,8 @@ namespace SASAI
             SqlParametros.Value = int.Parse(monto);
                     return Comando;
         }
-           public static SqlCommand Movimientos (string Usuario,
-            string tablaModificada,string DatoModificado,string antes,string despues)
-        {
-            //select @Usuario,@tablaModificada,@DatoModificado,@Antes,@despues, GETDATE()
-            SqlCommand Comando = new SqlCommand();
-            SqlParameter SqlParametros = new SqlParameter();
-           SqlParametros = Comando.Parameters.Add("@Usuario", SqlDbType.NVarChar, 20);
-            SqlParametros.Value = Usuario;
-            SqlParametros = Comando.Parameters.Add("@tablaModificada", SqlDbType.NVarChar,60);
-            SqlParametros.Value = tablaModificada;
-            SqlParametros = Comando.Parameters.Add("@DatoModificado", SqlDbType.NVarChar, 80);
-            SqlParametros.Value = DatoModificado;
-            SqlParametros = Comando.Parameters.Add("@Antes", SqlDbType.NVarChar, 100);
-            SqlParametros.Value = antes;
-            SqlParametros = Comando.Parameters.Add("@despues", SqlDbType.NVarChar, 100);
-            SqlParametros.Value = despues;
 
-            return Comando;
-        }
-        
-         public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes,
+        public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes,
                                              string Despues, DateTime fecha)
          {
             SqlCommand Comando = new SqlCommand();
@@ -103,7 +68,8 @@ namespace SASAI
              return Comando;
              
          }
-         public static SqlCommand Cursos
+
+        public static SqlCommand Cursos
             (string CodCurso  ,string FechaInicio  ,string FechaFinal, int Nota_Min,int CapacidadMax )
          {
             SqlCommand Comando = new SqlCommand();
@@ -122,7 +88,8 @@ namespace SASAI
              return Comando;
              
          }
-         public static SqlCommand EspecialidadesXCursos
+         
+        public static SqlCommand EspecialidadesXCursos
              (string CodCurso  ,string CodEspecialidad  ) 
          {
             SqlCommand Comando = new SqlCommand();
@@ -134,7 +101,8 @@ namespace SASAI
           return Comando;
              
          }
-    public static SqlCommand Especialidades
+
+        public static SqlCommand Especialidades
              (string nombre   ,string Codespecialidad,int AniosAprox)
          {
             SqlCommand Comando = new SqlCommand();
@@ -165,6 +133,7 @@ namespace SASAI
           return Comando;
              
          }
+
         public static SqlCommand Inscriptos 
              (int DNI,string codcurso  ,int IDinscripto ,string Nombre ,string Apellido,
              string Email, string Telefono,bool Const_Analitico,bool Const_Cuil,
@@ -223,7 +192,8 @@ namespace SASAI
          
             return Comando;
          }
-         public static SqlCommand Preinscriptos 
+        
+        public static SqlCommand Preinscriptos 
              (int DNI,string codcurso,string IDinscripto,string Nombre,string Apellido,
               string Email,string Telefono,int DNIOLD,string Turno,string Modalidad)
          {
@@ -254,5 +224,114 @@ namespace SASAI
              
          }
         
+    }
+
+    class Usuario_class
+    {
+        public static SqlCommand Usuarios_completo(string usuario, string contrasena, int val = 1)
+        {
+
+            SqlCommand Comando = new SqlCommand();
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@user", SqlDbType.NVarChar, 20);
+            SqlParametros.Value = usuario;
+            SqlParametros = Comando.Parameters.Add("@contra", SqlDbType.NVarChar, 50);
+            SqlParametros.Value = contrasena;
+            SqlParametros = Comando.Parameters.Add("@acceso", SqlDbType.Int);
+            SqlParametros.Value = val;
+
+
+            return Comando;
+        }
+
+        public static void Usuario_user (ref SqlCommand Comando,string user)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@user", SqlDbType.NVarChar, 20);
+            SqlParametros.Value = user;
+            
+        }
+        public static void Usuario_Contrasena (ref SqlCommand Comando, string contra)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@contra", SqlDbType.NVarChar, 50);
+            SqlParametros.Value = contra;
+
+        }
+
+        public static int UsuarioenUso(string nombreuser)
+        {
+            SqlCommand comando = new SqlCommand();
+            AccesoDatos aq = new AccesoDatos();
+            Usuario_class.Usuario_user(ref comando, nombreuser);
+
+            aq.ConfigurarProcedure(ref comando, "UsuarioEnuso");
+            comando.Connection = aq.ObtenerConexion();
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (int.Parse(reader[0].ToString()) == 1)
+                {
+                    return 1;
+                }
+
+            }
+            return -1;
+        }
+
+        public static int VerificarAlluser(string nombreuser,string contrasena)
+        {
+            try { 
+            SqlCommand comando = new SqlCommand();
+            AccesoDatos aq = new AccesoDatos();
+            comando = Usuario_class.Usuarios_completo(nombreuser,contrasena,1);
+
+            aq.ConfigurarProcedure(ref comando, "VerificarUsuario");
+            comando.Connection = aq.ObtenerConexion();
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (int.Parse(reader[0].ToString()) != 0)
+                {
+                    return int.Parse(reader[0].ToString());
+                }
+
+            }
+                return -1;
+
+            }
+            catch (Exception ex) {
+                return -1;
+            }
+        }
+
+        public static int CrearUsuario (ref SqlCommand comando, string procedure, string nombreuser,string contra,int acceso =1)
+        {
+            AccesoDatos aq = new AccesoDatos();
+
+           comando= Usuario_class.Usuarios_completo(nombreuser, contra, acceso);
+
+            aq.ConfigurarProcedure(ref comando, procedure);
+            comando.Connection = aq.ObtenerConexion();
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (int.Parse(reader[0].ToString()) == 1)
+                {
+                    return 1;
+                }
+
+            }
+            return -1;
+
+        }
+
+
     }
 }

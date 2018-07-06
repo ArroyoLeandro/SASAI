@@ -22,31 +22,32 @@ namespace SASAI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AccesoDatos conexion = new AccesoDatos();
+            AccesoDatos aq = new AccesoDatos();
+            DataSet ds = new DataSet();
+            string consulta = "select* from Usuarios where usuario = '"+Txt_Usuario.Text+"' and contrasena = '"+Txt_Contra.Text+"'";
 
-            string consulta = "VerificarUsuario";
-           SqlCommand comando = new SqlCommand();
-           
+            // AccesoDatos aq = new AccesoDatos();
+            //  DataSet ds = new DataSet();
+            //  string consulta = "select* from Usuarios where usuario = '"+Txt_Usuario.Text+"' and contrasena = '"+Txt_Contra.Text+"'";
+            SqlCommand comando = new SqlCommand();
 
-            comando = DatosSP.Usuarios(Txt_Usuario.Text, Txt_Contra.Text, 2);
-            conexion.ConfigurarProcedure(ref comando, consulta);
-            comando.Connection = conexion.ObtenerConexion();
-            
-            SqlDataReader reader=comando.ExecuteReader();
-           
-         
-            while (reader.Read())
+
+
+            if (Usuario_class.VerificarAlluser(Txt_Usuario.Text,Txt_Contra.Text) !=-1)
             {
-
-                if (int.Parse(reader[0].ToString())==1)
-                {
-                    Formularios.Usuario = Txt_Usuario.Text;
-                    this.Hide();
-                    Formularios.enviarFormulario().ShowDialog();
-                    this.Close();
-                }
+                Formularios.Usuario = Txt_Usuario.Text;
+                Formularios.acceso = Usuario_class.VerificarAlluser(Txt_Usuario.Text, Txt_Contra.Text);
+                this.Hide();
+                Formularios.enviarFormulario().ShowDialog();
+                this.Close();
 
             }
+            
+            
+            
+            
+        
+            
 
 
         }
@@ -66,16 +67,22 @@ namespace SASAI
             {
                 button1_Click(sender, e);
             }
+        }
 
-            if ((int)e.KeyChar == (int)Keys.RControlKey && (int)e.KeyChar == (int)Keys.Back)
-                Txt_Contra.Clear();
-                
-                    
-           }
+          
 
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Txt_Usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+             
+            }
         }
     }
 }

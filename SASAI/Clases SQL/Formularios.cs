@@ -15,6 +15,7 @@ namespace SASAI
        
         public static Form1 DIOS = new Form1();
         public static string Usuario = "";
+        public static int acceso=0;
 
         public static Form1 enviarFormulario()
         {

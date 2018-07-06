@@ -14,7 +14,10 @@ namespace SASAI
     {
         public Form1()
         {
+            
             InitializeComponent();
+          
+
         }
     
         private void cursoActualToolStripMenuItem_Click(object sender, EventArgs e)
@@ -33,7 +36,14 @@ namespace SASAI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if (Formularios.acceso == 10)
+            {
+                administradorToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                administradorToolStripMenuItem.Visible = false;
+            }
         }
 
         private void todosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +102,18 @@ namespace SASAI
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void cargaBajaUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABMAdministrador alta = new ABMAdministrador();
+            Formularios.AbrirFormularioHijos(alta);
+        }
+
+        private void controlXUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BajayModificacionAdministrador bajaymod = new BajayModificacionAdministrador();
+            Formularios.AbrirFormularioHijos(bajaymod);
         }
     }
 }

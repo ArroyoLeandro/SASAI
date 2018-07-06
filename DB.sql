@@ -9,6 +9,7 @@ create table Usuarios (
 usuario varchar(20) not null,
 contrasena varchar(50) not null,
 acceso int not null,
+baja bit not null default 0,
 constraint pk_claveUsuarios Primary Key (usuario)
 )
 create table Materias (
@@ -137,14 +138,14 @@ foreign key (DNI) references Inscriptos (DNI)
 
 -----------------------carga valores tabla---------------------------------------------------------------------------------
 
-insert into usuarios (usuario,contrasena,acceso)
-select 'admin','',6 union
-select 'nehuen','123',10 union 
-select 'pedron','123',9 union
-select 'leandro','123',8 union
-select 'mariano','123',5 union
-select 'batman','123',7 union
-select 'robin','123',6  
+insert into usuarios (usuario,contrasena,acceso,baja)
+select 'admin','',6,1 union
+select 'nehuen','123',10,0 union 
+select 'pedron','123',9,1 union
+select 'leandro','123',8,0 union
+select 'mariano','123',5,0 union
+select 'batman','123',7,0 union
+select 'robin','123',6,1 
 
 go
 ---------------------------- procedure------------------------------------------------------------------------------------
@@ -152,7 +153,7 @@ go
 create procedure VerificarUsuario 
 @user varchar(20), @contra varchar(20), @acceso int
 as
-select count (usuario)
+select sum (acceso)
 from Usuarios
 where usuario=@user and contrasena = @contra
 go
@@ -190,6 +191,27 @@ where usuario =@user
 return 
 go
 --------------------------------------------------------------------------------------------
+create procedure UsuarioEnuso
+@user varchar(20)
+as
+select COUNT (usuario)
+from Usuarios
+where usuario=@user
+
+
+--------------------------------------------------------------------------------------------
+go
+create procedure CrearUsuario
+@user varchar(20), @contra int , @acceso int
+as
+insert into Usuarios(usuario,contrasena,acceso)
+select @user,@contra, @acceso 
+
+select count (usuario)
+from usuarios
+where usuario =@user
+--------------------------------------------------------------------------------------------
+go
 create procedure EliminarInscripto (
 @DNI int 
 )
@@ -200,6 +222,7 @@ AS
 
 go
 --------------------------------------------------------------------------------------------
+
 create procedure CargaPreinscripto (
  @DNI int,@codcurso varchar(40),@IDinscripto int,@Nombre varchar(50),@Apellido varchar(50),
               @Email varchar(100),@Telefono varchar(30),@DNIOLD int,@Turno varchar(60),@Modalidad varchar(60))

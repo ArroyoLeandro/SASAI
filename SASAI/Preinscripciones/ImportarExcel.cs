@@ -114,26 +114,28 @@ namespace SASAI
            
            
             for (int i =0; i<dataGridView1.Rows.Count; i++) { 
-            try { comando = DatosSP.Preinscriptos(int.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString()), "MAYO 2018", "0",
+            try {
+
+
+                        comando = DatosSP.Preinscriptos(int.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString()), "MAYO 2018", "0",
              dataGridView1.Rows[i].Cells[8].Value.ToString(), dataGridView1.Rows[i].Cells[7].Value.ToString(),
              dataGridView1.Rows[i].Cells[12].Value.ToString(), dataGridView1.Rows[i].Cells[11].Value.ToString(),
              0, dataGridView1.Rows[i].Cells[6].Value.ToString(), dataGridView1.Rows[i].Cells[5].Value.ToString()
             );
 
-                        registros_ok++;
-                        aq.EjecutarProcedimientoAlmacenado(comando, "CargaPreinscripto");
-
                        
-                }
+                        aq.EjecutarProcedimientoAlmacenado(comando, "CargaPreinscripto");
+                        registros_ok++;
+
+                    }
                 catch (Exception ex) {
-                     //   MessageBox.Show(ex.ToString());
+                     //  MessageBox.Show(ex.ToString());
                 }
                             }
 
             MessageBox.Show("Registros cargados correctamente: " + registros_ok );
                
-                    Registros.CargarMovimiento("Preinscripciones", "Carga de Preinscripciones", "Carga de Preinscripciones completo", DateTime.Now.ToString());
-                
+                                  
 
             }
         }
