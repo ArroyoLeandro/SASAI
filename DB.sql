@@ -169,13 +169,13 @@ AS
 go
 --------------------------------------------------------------------------------------------
 create procedure ActualizarUsuario
-(@user varchar(20), @contra varchar(20),@acceso int )
+(@user varchar(20), @contra varchar(20),@acceso int,@baja int )
 as
 update Usuarios 
 set 
 contrasena =@contra,
-acceso =@acceso
-
+acceso =@acceso,
+baja = @baja
 where usuario =@user
 return 
 go
