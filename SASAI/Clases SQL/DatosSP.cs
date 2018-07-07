@@ -251,12 +251,43 @@ namespace SASAI
             SqlParametros.Value = user;
             
         }
+        public static void Usuario_baja(ref SqlCommand Comando, int baja)
+        {
+            
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@baja", SqlDbType.Bit);
+            SqlParametros.Value = baja;
+
+        }
         public static void Usuario_Contrasena (ref SqlCommand Comando, string contra)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@contra", SqlDbType.NVarChar, 50);
             SqlParametros.Value = contra;
 
+        }
+
+        public static int ActualizarUser(string usuario, string contrasena, int val ,int baja)
+        {
+            SqlCommand comando = new SqlCommand();
+            AccesoDatos aq = new AccesoDatos();
+          comando=  Usuario_class.Usuarios_completo(usuario, contrasena, val);
+            Usuario_class.Usuario_baja(ref comando, baja);
+            aq.ConfigurarProcedure(ref comando, "ActualizarUsuario");
+            comando.Connection = aq.ObtenerConexion();
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (int.Parse(reader[0].ToString()) == 1)
+                {
+                    return 1;
+                }
+
+            }
+
+            return -1;
         }
 
         public static int UsuarioenUso(string nombreuser)
