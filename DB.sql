@@ -1,5 +1,5 @@
 use master
---drop database sasai
+drop database sasai
 create database SASAI
 go
 use SASAI
@@ -56,6 +56,7 @@ CodMateria varchar(40)  not null,
 Codcurso varchar(40)  not null,
 CodEspecialidad varchar(40),
 NotaMateria int not null,
+usuario varchar(20) not null,
 constraint pk_claveMatAproAlum Primary Key (Dni,Codmateria,codcurso)
 )
 create table Inscriptos (
@@ -96,6 +97,7 @@ Telefono varchar(30)  not null default '0',
 DNIOLD int   not null default '0',
 Turno varchar(60) not null default'Mañana',
 Modalidad varchar(60) not null ,
+Usuario varchar(20) not null,
 constraint pk_clavePreinscriptos Primary Key (DNI)
 
 )
@@ -226,15 +228,14 @@ go
 
 create procedure CargaPreinscripto (
  @DNI int,@codcurso varchar(40),@IDinscripto int,@Nombre varchar(50),@Apellido varchar(50),
-              @Email varchar(100),@Telefono varchar(30),@DNIOLD int,@Turno varchar(60),@Modalidad varchar(60))
+              @Email varchar(100),@Telefono varchar(30),@DNIOLD int,@Turno varchar(60),@Modalidad varchar(60),
+              @usuarioactivo varchar(20))
 as
 
 
-insert into Preinscriptos (DNI,codcurso,IDinscripto,Nombre,Apellido,Email,Telefono,DNIOLD,Turno,Modalidad)
-select @DNI,@codcurso,@IDinscripto,@Nombre,@Apellido,@Email,@Telefono,@DNIOLD,@Turno,@Modalidad
+insert into Preinscriptos (DNI,codcurso,IDinscripto,Nombre,Apellido,Email,Telefono,DNIOLD,Turno,Modalidad,Usuario)
+select @DNI,@codcurso,@IDinscripto,@Nombre,@Apellido,@Email,@Telefono,@DNIOLD,@Turno,@Modalidad, @usuarioactivo
 
 go
 --------------------------------------------------------------------------------------------
-
-
 

@@ -94,11 +94,17 @@ namespace SASAI
            textBox1.Text= dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
            textBox2.Text= dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
            textBox3.Text= dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            if ((int)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value == 1)
-            {
-                checkBox1.Checked = true;
+            try {
+            //    MessageBox.Show(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString());
+                if (dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value.ToString() == "True")
+                {
+                    checkBox1.Checked = true;
+                }
+                else { checkBox1.Checked = false; }
             }
-            else { checkBox1.Checked = false; }
+
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            
             
         }
     }

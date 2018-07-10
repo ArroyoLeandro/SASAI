@@ -197,3 +197,5 @@ D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.csproj.GenerateResource.
 D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
 D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.exe
 D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.Auditoria.resources
+D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.filtrar.resources

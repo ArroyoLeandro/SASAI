@@ -57,6 +57,12 @@
     <Compile Include="Administrador\BajayModificacionAdministrador.Designer.cs">
       <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Auditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auditoria.Designer.cs">
+      <DependentUpon>Auditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases SQL\DatosSP.cs" />
     <Compile Include="Clases SQL\AccesoDatos.cs" />
     <Compile Include="Alumnos\AlumnosTodos.cs">
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="Cursos\CursoT_Filtrar.Designer.cs">
       <DependentUpon>CursoT_Filtrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="filtrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="filtrar.Designer.cs">
+      <DependentUpon>filtrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,9 @@
     <EmbeddedResource Include="Alumnos\AlumnosF.resx">
       <DependentUpon>AlumnosF.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auditoria.resx">
+      <DependentUpon>Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cursos\CursoActual.resx">
       <DependentUpon>CursoActual.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\CursoT_Filtrar.resx">
       <DependentUpon>CursoT_Filtrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="filtrar.resx">
+      <DependentUpon>filtrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

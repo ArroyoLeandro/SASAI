@@ -115,5 +115,11 @@ namespace SASAI
             BajayModificacionAdministrador bajaymod = new BajayModificacionAdministrador();
             Formularios.AbrirFormularioHijos(bajaymod);
         }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Auditoria au = new Auditoria();
+            Formularios.AbrirFormularioHijos(au);
+        }
     }
 }

@@ -185,6 +185,7 @@
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
             this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.auditoriaToolStripMenuItem.Text = "Auditoria";
+            this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
             // Form1
             // 

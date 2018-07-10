@@ -223,8 +223,10 @@ namespace SASAI
              SqlParametros.Value = Turno;
              SqlParametros = Comando.Parameters.Add ("@Modalidad", SqlDbType.NVarChar, 60);
              SqlParametros.Value = Modalidad;
-             
-             return Comando;
+            SqlParametros = Comando.Parameters.Add("@usuarioactivo", SqlDbType.NVarChar, 20);
+            SqlParametros.Value = Formularios.Usuario;
+
+            return Comando;
              
          }
         

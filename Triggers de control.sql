@@ -23,7 +23,7 @@ DECLARE @bit int ,
 SELECT @TableName = 'Preinscriptos' --<-- cambiar el nombre de la tabla 
 
 -- Fecha y Usuario
-SELECT @UserName = system_user ,
+SELECT @UserName =  (select Usuario from inserted) ,
        @UpdateDate = convert(varchar(8), getdate(), 112) + 
                      ' ' + 
                      convert(varchar(12), getdate(), 114)
@@ -137,7 +137,7 @@ DECLARE @bit int ,
 SELECT @TableName = 'AlumnosxMateriasxCursos' --<-- cambiar el nombre de la tabla 
 
 -- Fecha y Usuario
-SELECT @UserName = system_user ,
+SELECT @UserName = (select Usuario from inserted),
        @UpdateDate = convert(varchar(8), getdate(), 112) + 
                      ' ' + 
                      convert(varchar(12), getdate(), 114)
