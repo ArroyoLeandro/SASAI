@@ -5,13 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 
 namespace SASAI
 {
     class DatosSP
-    {        
+    {
 
-       
+
+
+
         public static void Inscriptos(ref SqlCommand Comando, DataRow fila)
         {
             SqlParameter SqlParametros = new SqlParameter();

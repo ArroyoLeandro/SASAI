@@ -48,29 +48,38 @@ namespace SASAI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int aux;
-            if (checkBox1.Checked==true)
-            {
-                aux = 1;
-            }
-            else
-            {
-                aux = 0;
-            }
-            try
-            {
-                Usuario_class.ActualizarUser(textBox1.Text, textBox2.Text, int.Parse(textBox3.Text), aux);
-                MessageBox.Show("Registro modificado.");
-                actualizargrid();
 
+            if (textBox2.Text != "")
+            {
+                try
+                {
+                    if (int.Parse(textBox3.Text) <= 10 && int.Parse(textBox3.Text) >= 1)
+                    {
+                        int aux;
+                        if (checkBox1.Checked == true)
+                        {
+                            aux = 1;
+                        }
+                        else
+                        {
+                            aux = 0;
+                        }
+                        try
+                        {
+                            Usuario_class.ActualizarUser(textBox1.Text, textBox2.Text, int.Parse(textBox3.Text), aux);
+                            MessageBox.Show("Registro modificado.");
+                            actualizargrid();
+
+                        }
+
+                        catch (Exception ex) { }
+
+                    }
+                    else { MessageBox.Show("El nivel de acceso tiene que ser entre el 1 y el 10."); }
+                }
+                catch (Exception) { }
             }
-
-            catch(Exception ex) {  }
-        }
-
-        private void dataGridView1_AllowUserToOrderColumnsChanged(object sender, EventArgs e)
-        {
-           
+            else { MessageBox.Show("No se permiten campos vacios."); }
         }
 
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -85,10 +94,11 @@ namespace SASAI
            textBox1.Text= dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
            textBox2.Text= dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
            textBox3.Text= dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[2].Value.ToString();
-            if ((int)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value==1)
+            if ((int)dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[3].Value == 1)
             {
-                checkBox1.Checked =true ;
+                checkBox1.Checked = true;
             }
+            else { checkBox1.Checked = false; }
             
         }
     }

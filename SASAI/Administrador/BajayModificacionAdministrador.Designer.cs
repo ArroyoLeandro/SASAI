@@ -61,7 +61,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(98, 288);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.AllowUserToOrderColumnsChanged += new System.EventHandler(this.dataGridView1_AllowUserToOrderColumnsChanged);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             // 

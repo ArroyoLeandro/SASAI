@@ -4,7 +4,7 @@ go
 
 --use master drop database sasai
 
-CREATE TRIGGER dbo.trIUDUPreinscripciones ON preinscriptos FOR INSERT, UPDATE, DELETE
+create TRIGGER dbo.trIUDUPreinscripciones ON preinscriptos FOR INSERT, UPDATE, DELETE
 AS 
 
 DECLARE @bit int ,	
@@ -118,7 +118,7 @@ while @field < @maxfield
 	 
 SET NoCount OFF 
 GO
-CREATE TRIGGER dbo.trIUDUAlumnxMatexCursos ON preinscriptos FOR INSERT, UPDATE, DELETE
+create TRIGGER dbo.trIUDUAlumnxMatexCursos ON AlumnosxMateriasxCursos FOR INSERT, UPDATE, DELETE
 AS 
 
 DECLARE @bit int ,	

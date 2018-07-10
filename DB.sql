@@ -4,10 +4,11 @@ create database SASAI
 go
 use SASAI
 
+
 use SASAI
 create table Usuarios (
 usuario varchar(20) not null,
-contrasena varchar(50) not null,
+contrasena varchar(20) not null,
 acceso int not null,
 baja bit not null default 0,
 constraint pk_claveUsuarios Primary Key (usuario)
