@@ -225,7 +225,18 @@ AS
 
 go
 --------------------------------------------------------------------------------------------
+go
+create procedure VerificarUsuarioActivo (
+@user varchar(20), @contra int 
+)
+AS
+    select count (Usuario)
+    from Usuarios
+    WHERE usuario=@user and contrasena = @contra and baja =0
+    RETURN
 
+go
+--------------------------------------------------------------------------------------------
 create procedure CargaPreinscripto (
  @DNI int,@codcurso varchar(40),@IDinscripto int,@Nombre varchar(50),@Apellido varchar(50),
               @Email varchar(100),@Telefono varchar(30),@DNIOLD int,@Turno varchar(60),@Modalidad varchar(60),
