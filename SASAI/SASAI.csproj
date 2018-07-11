@@ -57,6 +57,12 @@
     <Compile Include="Administrador\BajayModificacionAdministrador.Designer.cs">
       <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alumnos\AlumnoSelecionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\AlumnoSelecionado.Designer.cs">
+      <DependentUpon>AlumnoSelecionado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auditoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\BajayModificacionAdministrador.resx">
       <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\AlumnoSelecionado.resx">
+      <DependentUpon>AlumnoSelecionado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\AlumnosTodos.resx">
       <DependentUpon>AlumnosTodos.cs</DependentUpon>

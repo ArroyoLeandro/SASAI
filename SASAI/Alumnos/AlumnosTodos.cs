@@ -44,5 +44,12 @@ namespace SASAI
           //  falta corregir esto jejejejeje que seria el borrar 1 solo inscripto
           /// aw.EliminarInscripto("Inscriptos",ds,"EliminarInscripto", dataGridView1.SelectedRows)
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Rows[].Cells[].Value;
+            AlumnoSelecionado aq = new AlumnoSelecionado(Dni);
+            Formularios.AbrirFormularioHijos(aq);
+        }
     }
 }
