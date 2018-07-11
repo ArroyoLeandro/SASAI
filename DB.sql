@@ -57,12 +57,12 @@ Codcurso varchar(40)  not null,
 CodEspecialidad varchar(40),
 NotaMateria int not null,
 usuario varchar(20) not null,
+idInscripto int not null,
+MontoaPagar money not null,
 constraint pk_claveMatAproAlum Primary Key (Dni,Codmateria,codcurso)
 )
 create table Inscriptos (
 DNI int  not null,
-codcurso varchar(40)  not null,
-IDinscripto int not null,
 Nombre varchar(50)  not null,
 Apellido varchar(50)  not null,
 Email varchar(100)  not null,
