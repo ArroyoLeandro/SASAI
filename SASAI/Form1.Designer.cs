@@ -46,6 +46,7 @@
             this.cargaBajaUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlXUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darBajaAPreinscriptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +124,8 @@
             // preinscripcionToolStripMenuItem
             // 
             this.preinscripcionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportarToolStripMenuItem});
+            this.exportarToolStripMenuItem,
+            this.darBajaAPreinscriptosToolStripMenuItem});
             this.preinscripcionToolStripMenuItem.Name = "preinscripcionToolStripMenuItem";
             this.preinscripcionToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.preinscripcionToolStripMenuItem.Text = "Preinscripcion";
@@ -131,7 +133,7 @@
             // exportarToolStripMenuItem
             // 
             this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.exportarToolStripMenuItem.Text = "Importar";
             this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
             // 
@@ -187,6 +189,13 @@
             this.auditoriaToolStripMenuItem.Text = "Auditoria";
             this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
             // 
+            // darBajaAPreinscriptosToolStripMenuItem
+            // 
+            this.darBajaAPreinscriptosToolStripMenuItem.Name = "darBajaAPreinscriptosToolStripMenuItem";
+            this.darBajaAPreinscriptosToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.darBajaAPreinscriptosToolStripMenuItem.Text = "Dar Baja a Preinscriptos";
+            this.darBajaAPreinscriptosToolStripMenuItem.Click += new System.EventHandler(this.darBajaAPreinscriptosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +236,7 @@
         private System.Windows.Forms.ToolStripMenuItem todosLosAlumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem interesadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darBajaAPreinscriptosToolStripMenuItem;
     }
 }
 

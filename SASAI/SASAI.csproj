@@ -63,11 +63,17 @@
     <Compile Include="Alumnos\AlumnoSelecionado.Designer.cs">
       <DependentUpon>AlumnoSelecionado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Auditoria.cs">
+    <Compile Include="Administrador\Auditoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Auditoria.Designer.cs">
+    <Compile Include="Administrador\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preinscripciones\BajaPreinscriptos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preinscripciones\BajaPreinscriptos.Designer.cs">
+      <DependentUpon>BajaPreinscriptos.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases SQL\DatosSP.cs" />
     <Compile Include="Clases SQL\AccesoDatos.cs" />
@@ -101,10 +107,10 @@
     <Compile Include="Cursos\CursoT_Filtrar.Designer.cs">
       <DependentUpon>CursoT_Filtrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="filtrar.cs">
+    <Compile Include="Administrador\filtrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="filtrar.Designer.cs">
+    <Compile Include="Administrador\filtrar.Designer.cs">
       <DependentUpon>filtrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -168,8 +174,11 @@
     <EmbeddedResource Include="Alumnos\AlumnosF.resx">
       <DependentUpon>AlumnosF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Auditoria.resx">
+    <EmbeddedResource Include="Administrador\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preinscripciones\BajaPreinscriptos.resx">
+      <DependentUpon>BajaPreinscriptos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cursos\CursoActual.resx">
       <DependentUpon>CursoActual.cs</DependentUpon>
@@ -180,7 +189,7 @@
     <EmbeddedResource Include="Cursos\CursoT_Filtrar.resx">
       <DependentUpon>CursoT_Filtrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="filtrar.resx">
+    <EmbeddedResource Include="Administrador\filtrar.resx">
       <DependentUpon>filtrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">

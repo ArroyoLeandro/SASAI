@@ -47,9 +47,9 @@ namespace SASAI
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.Rows[].Cells[].Value;
-            AlumnoSelecionado aq = new AlumnoSelecionado(Dni);
-            Formularios.AbrirFormularioHijos(aq);
+          //  dataGridView1.Rows[].Cells[].Value;
+          //  AlumnoSelecionado aq = new AlumnoSelecionado(Dni);
+          //  Formularios.AbrirFormularioHijos(aq);
         }
     }
 }

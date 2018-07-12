@@ -106,20 +106,26 @@ namespace SASAI
 
         private void cargaBajaUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABMAdministrador alta = new ABMAdministrador();
-            Formularios.AbrirFormularioHijos(alta);
+            Formularios.AbrirFormularioHijos(new ABMAdministrador());
         }
 
         private void controlXUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BajayModificacionAdministrador bajaymod = new BajayModificacionAdministrador();
-            Formularios.AbrirFormularioHijos(bajaymod);
+         
+            Formularios.AbrirFormularioHijos(new BajayModificacionAdministrador());
         }
 
         private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Auditoria au = new Auditoria();
-            Formularios.AbrirFormularioHijos(au);
+           Formularios.AbrirFormularioHijos(new Auditoria());
+        }
+
+
+        private void darBajaAPreinscriptosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            Formularios.AbrirFormularioPadre(new BajaPreinscriptos());
+
         }
     }
 }

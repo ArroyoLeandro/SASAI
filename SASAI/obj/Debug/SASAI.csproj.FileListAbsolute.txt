@@ -227,3 +227,5 @@ D:\SASAI-master\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
 D:\SASAI-master\SASAI\obj\Debug\SASAI.exe
 D:\SASAI-master\SASAI\obj\Debug\SASAI.pdb
 D:\SASAI-master\SASAI\obj\Debug\SASAI.Alumnos.Form1.resources
+D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.AlumnoSelecionado.resources
+D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.BajaPreinscriptos.resources

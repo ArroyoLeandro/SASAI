@@ -32,16 +32,45 @@ namespace SASAI
             SqlCommand comando = new SqlCommand();
 
 
+            try {
 
-            if (Usuario_class.VerificarAlluser(Txt_Usuario.Text,Txt_Contra.Text) !=-1)
-            {
-                Formularios.Usuario = Txt_Usuario.Text;
-                Formularios.acceso = Usuario_class.VerificarAlluser(Txt_Usuario.Text, Txt_Contra.Text);
-                this.Hide();
-                Formularios.enviarFormulario().ShowDialog();
-                this.Close();
+              //  MessageBox.Show(Usuario_class.VerificarUsuarioActivo(Txt_Usuario.Text, Txt_Contra.Text).ToString());
 
-            }
+
+               switch (Usuario_class.VerificarUsuarioActivo(Txt_Usuario.Text, Txt_Contra.Text)) 
+                {
+                    case 1:
+                        Formularios.Usuario = Txt_Usuario.Text;
+                        Formularios.acceso = Usuario_class.VerificarAlluser(Txt_Usuario.Text, Txt_Contra.Text);
+                        this.Hide();
+                        Formularios.enviarFormulario().ShowDialog();
+                        this.Close();
+                        break;
+                    case -1:
+                        MessageBox.Show("Este usuario no existe.");
+                        
+                        break;
+                    case -2:
+                        MessageBox.Show("Contraseña equivocada.");
+
+                        break;
+                    case -3:
+                        MessageBox.Show("Este usuario esta dado de baja.");
+
+                        break;
+                    case -100:
+                        MessageBox.Show("Este mensaje no deberia de aparecer...");
+
+                        break;
+                    default:
+                        break;
+
+                }
+                Txt_Contra.Clear();
+            
+              
+            } catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+            
             
             
             
@@ -73,7 +102,7 @@ namespace SASAI
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void Txt_Usuario_KeyPress(object sender, KeyPressEventArgs e)

@@ -317,6 +317,40 @@ namespace SASAI
             }
             return -1;
         }
+        public static int VerificarUsuarioActivo(string nombreuser, string contrasena)
+        {
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                AccesoDatos aq = new AccesoDatos();
+                Usuario_user(ref comando, nombreuser);
+                Usuario_Contrasena(ref comando, contrasena);
+
+
+                aq.ConfigurarProcedure(ref comando, "VerificarUsuarioActivo");
+                comando.Connection = aq.ObtenerConexion();
+
+                SqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+
+                    //  MessageBox.Show( reader[0].ToString());
+
+                    return (int.Parse(reader[0].ToString()));
+
+                }
+                return -100;
+               
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return -100;
+            }
+        }
 
         public static int VerificarAlluser(string nombreuser,string contrasena)
         {

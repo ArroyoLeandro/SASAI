@@ -1,5 +1,5 @@
 use master
-drop database sasai
+--drop database sasai
 create database SASAI
 go
 use SASAI
@@ -98,6 +98,7 @@ DNIOLD int   not null default '0',
 Turno varchar(60) not null default'Mañana',
 Modalidad varchar(60) not null ,
 Usuario varchar(20) not null,
+baja bit default 0,
 constraint pk_clavePreinscriptos Primary Key (DNI)
 
 )
@@ -230,12 +231,27 @@ create procedure VerificarUsuarioActivo (
 @user varchar(20), @contra int 
 )
 AS
-    select count (Usuario)
-    from Usuarios
-    WHERE usuario=@user and contrasena = @contra and baja =0
-    RETURN
+declare @ar int
+set @ar = 4 
 
-go
+if ((select COUNT(usuario)from Usuarios where usuario= @user)>0) begin
+		if((select COUNT(usuario)from Usuarios where usuario= @user and baja=0)>0)
+					begin		
+					if((select COUNT(usuario)from Usuarios where usuario= @user and contrasena=@contra)>0) begin set @ar=1 end
+					else begin set @ar=-2 end
+					end
+		else begin set @ar=-3 end
+
+end
+else begin set @ar=-1 end
+
+select @ar
+-- muestra -3 = USUARIO DADO DE BAJA
+-- muestra -2 = CONTRASENA MAL
+-- muestra -1 = USUARIO NO EXISTE
+-- muestra	1 = USUARIO Y CONTRASENA Y NO DADO DE BAJA PERFECTO.
+  go
+
 --------------------------------------------------------------------------------------------
 create procedure CargaPreinscripto (
  @DNI int,@codcurso varchar(40),@IDinscripto int,@Nombre varchar(50),@Apellido varchar(50),
