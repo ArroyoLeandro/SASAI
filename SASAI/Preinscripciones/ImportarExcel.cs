@@ -101,7 +101,7 @@ namespace SASAI
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Preinscripciones.Confirmacion conf = new Preinscripciones.Confirmacion();
+            Preinscripciones.Confirmacion conf = new Preinscripciones.Confirmacion("Esta Seguro de querer cargar la Preinscripcion?");
             int registros_ok = 0;
             if (conf.ShowDialog()==DialogResult.OK)
            { 

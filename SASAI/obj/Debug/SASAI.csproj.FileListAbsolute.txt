@@ -229,3 +229,7 @@ D:\SASAI-master\SASAI\obj\Debug\SASAI.pdb
 D:\SASAI-master\SASAI\obj\Debug\SASAI.Alumnos.Form1.resources
 D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.AlumnoSelecionado.resources
 D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.BajaPreinscriptos.resources
+D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.AlumnoSelecionado.resources
+D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.Auditoria.resources
+D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.BajaPreinscriptos.resources
+D:\Users\nehuen\Desktop\as\SASAI2\SASAI\obj\Debug\SASAI.filtrar.resources

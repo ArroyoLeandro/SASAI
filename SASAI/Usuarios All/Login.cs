@@ -108,10 +108,16 @@ namespace SASAI
         private void Txt_Usuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             
-            if ((int)e.KeyChar == (int)Keys.Enter)
+            if ((int)e.KeyChar == (int)Keys.Escape)
             {
-             
+                Preinscripciones.Confirmacion pre = new Preinscripciones.Confirmacion("Esta seguro de querer salir de la Aplicacion?");
+                if (pre.ShowDialog() == DialogResult.OK)
+                {
+                    this.Close();
+                }
+
+
             }
-        }
+            }
     }
 }

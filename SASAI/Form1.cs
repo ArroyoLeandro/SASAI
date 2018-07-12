@@ -113,12 +113,12 @@ namespace SASAI
         private void controlXUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
          
-            Formularios.AbrirFormularioHijos(new BajayModificacionAdministrador());
+            Formularios.AbrirFormularioPadre(new BajayModificacionAdministrador());
         }
 
         private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           Formularios.AbrirFormularioHijos(new Auditoria());
+           Formularios.AbrirFormularioPadre(new Auditoria());
         }
 
 

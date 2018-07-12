@@ -57,7 +57,12 @@ namespace SASAI
         private void Auditoria_Resize(object sender, EventArgs e)
         {
             dataGridView1.Height = this.Height - 150;
-            dataGridView1.Width = this.Width -40;
+            dataGridView1.Width = this.Width -60;
+        }
+
+        private void Auditoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }
