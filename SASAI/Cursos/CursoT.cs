@@ -25,8 +25,8 @@ namespace SASAI
         private void button1_Click_1(object sender, EventArgs e)
         {
             CursoT_Filtrar CursoF = new CursoT_Filtrar();
-            CursoF.MdiParent = Formularios.DIOS;
-            CursoF.Show();
+
+            Formularios.AbrirFormularioHijos(CursoF);
         }
     }
 }

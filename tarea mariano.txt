@@ -1,0 +1,7 @@
+mariano tiene que hacer esto:
+Cuando venga un alumno a anotarse y ya este inscripto o
+ no anteriormente, se tiene que cargar el campo de la 
+tabla Inscriptos (UltimoCurso) con el cod curso de la p
+preinscripcion
+
+-------------------------------------------------------

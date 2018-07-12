@@ -45,6 +45,7 @@
             this.lb_NombreCurso.Size = new System.Drawing.Size(77, 13);
             this.lb_NombreCurso.TabIndex = 0;
             this.lb_NombreCurso.Text = "Nombre Curso:";
+            this.lb_NombreCurso.Click += new System.EventHandler(this.lb_NombreCurso_Click);
             // 
             // button1
             // 
@@ -92,7 +93,7 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Alumnos";
             // 
-            // CursoEspecifico
+            // CursoActual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,8 +104,9 @@
             this.Controls.Add(this.lb_FechaInicio);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lb_NombreCurso);
-            this.Name = "CursoEspecifico";
+            this.Name = "CursoActual";
             this.Text = "Curso Actual (Poner nombre del curso en este lugar)";
+            this.Load += new System.EventHandler(this.CursoActual_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

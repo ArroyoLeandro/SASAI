@@ -1,5 +1,5 @@
 use master
---drop database sasai
+drop database sasai
 create database SASAI
 go
 use SASAI
@@ -33,6 +33,7 @@ FechaInicio date,
 FechaFinal date,
 Nota_Min int not null,
 CapacidadMax int ,
+actual int default 0 ,
 constraint pk_Cursos Primary Key (codcurso)
 
 )
@@ -65,6 +66,7 @@ create table Inscriptos (
 DNI int  not null,
 Nombre varchar(50)  not null,
 Apellido varchar(50)  not null,
+UltimoCurso varchar(40)not null,
 Email varchar(100)  not null,
 Telefono varchar(50)  not null,
 Activo bit not null default 1,

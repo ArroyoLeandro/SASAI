@@ -32,7 +32,7 @@ namespace SASAI
                  consulta = f.consulta;
                 
             }
-            MessageBox.Show(consulta);
+            //MessageBox.Show(consulta);
             try {
                 AccesoDatos aq = new AccesoDatos();
                 DataSet ds = new DataSet();
