@@ -1,11 +1,11 @@
-use master
-drop database sasai
-create database SASAI
-go
-use SASAI
+--use master
+--drop database sasai
 
+--create database SASAI
+--go
 
-use SASAI
+--use SASAI
+--go
 create table Usuarios (
 usuario varchar(20) not null,
 contrasena varchar(20) not null,
@@ -154,7 +154,42 @@ select 'batman','123',7,0 union
 select 'robin','123',6,1 
 
 go
+
+
+insert into Materias(CodMateria,NombreMateria,Monto)
+select '001','Matematica',800 union
+select '002','Introduccion a la Programacion',800 union
+select '003','Introduccion a la Informatica',600
+go
 ---------------------------- procedure------------------------------------------------------------------------------------
+
+create procedure MateriaModificacionNombre
+(@ID varchar(40), @Name varchar(100))
+
+as
+update Materias
+set 
+NombreMateria = @Name
+
+where CodMateria = @ID 
+return 
+go
+
+----------------------------------------------------------------------------------------------------------------
+create procedure MateriaModificacionPrecio
+(@ID varchar(40), @Monto money)
+
+as
+update Materias
+set 
+Monto = @Monto
+
+where CodMateria = @ID 
+return 
+go
+
+----------------------------------------------------------------------------------------------------------------
+
 go
 create procedure VerificarUsuario 
 @user varchar(20), @contra varchar(20), @acceso int
@@ -268,3 +303,5 @@ select @DNI,@codcurso,@IDinscripto,@Nombre,@Apellido,@Email,@Telefono,@DNIOLD,@T
 go
 --------------------------------------------------------------------------------------------
 
+
+select * from materias

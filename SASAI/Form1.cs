@@ -87,7 +87,7 @@ namespace SASAI
 
         private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formularios.AbrirFormularioPadre(new Materias());
+            Formularios.AbrirFormularioHijos(new Materias());
 
 
         }
@@ -113,12 +113,12 @@ namespace SASAI
         private void controlXUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
          
-            Formularios.AbrirFormularioPadre(new BajayModificacionAdministrador());
+            Formularios.AbrirFormularioHijos(new BajayModificacionAdministrador());
         }
 
         private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           Formularios.AbrirFormularioPadre(new Auditoria());
+           Formularios.AbrirFormularioHijos(new Auditoria());
         }
 
 

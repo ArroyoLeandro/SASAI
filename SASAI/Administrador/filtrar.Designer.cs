@@ -48,7 +48,7 @@
             this.button2.Location = new System.Drawing.Point(161, 283);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
+            this.button2.TabIndex = 16;
             this.button2.Text = "Aceptar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -67,7 +67,7 @@
             this.textBox2.Location = new System.Drawing.Point(161, 64);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(227, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBox2.TabIndex = 14;
             // 
             // label1
             // 
@@ -83,7 +83,7 @@
             this.textBox1.Location = new System.Drawing.Point(161, 38);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.TabIndex = 12;
             // 
             // label3
             // 
@@ -99,7 +99,7 @@
             this.textBox3.Location = new System.Drawing.Point(161, 136);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(227, 20);
-            this.textBox3.TabIndex = 4;
+            this.textBox3.TabIndex = 18;
             // 
             // label4
             // 
@@ -115,7 +115,7 @@
             this.textBox4.Location = new System.Drawing.Point(161, 162);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(227, 20);
-            this.textBox4.TabIndex = 5;
+            this.textBox4.TabIndex = 20;
             // 
             // listBox1
             // 
@@ -135,7 +135,7 @@
             this.listBox2.Location = new System.Drawing.Point(161, 185);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(90, 43);
-            this.listBox2.TabIndex = 6;
+            this.listBox2.TabIndex = 23;
             // 
             // label5
             // 
@@ -177,7 +177,6 @@
             this.Name = "filtrar";
             this.Text = "filtrar";
             this.Load += new System.EventHandler(this.filtrar_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.filtrar_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

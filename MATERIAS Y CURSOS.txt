@@ -1,0 +1,15 @@
+en curso, aparece, nombre de curso, fecha inciio y final, 
+datos de los alumnos y todas las materias del curso, indicando las 3 posibles instancias (aprobo, cursando, no cursa).
+
+materias:: 
+
+
+listaria todas las materias existentes.
+un boton de agregar materia. (nombre, id materia autonumerico, precio[lo ingresa usuario])
+otro para modificar materia (nombre y precio)
+
+
+
+
+
+

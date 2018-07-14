@@ -24,18 +24,34 @@ namespace SASAI
         }
 
     
-        public static SqlCommand Materias (string CodMateria,string NombreMateria,string monto )
+        public static SqlCommand Materias (string CodMateria,string NombreMateria)
         {
         
             SqlCommand Comando = new SqlCommand();
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@CodMateria", SqlDbType.NVarChar, 40);
+            SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.NVarChar, 40);
             SqlParametros.Value = CodMateria;
-            SqlParametros = Comando.Parameters.Add("@NombreMateria", SqlDbType.NVarChar, 100);
+            SqlParametros = Comando.Parameters.Add("@Name", SqlDbType.NVarChar, 100);
             SqlParametros.Value = NombreMateria;
+            //SqlParametros = Comando.Parameters.Add("@Monto", SqlDbType.Money);
+            //SqlParametros.Value = int.Parse(monto);
+            //,string monto 
+            return Comando;
+        }
+
+        public static SqlCommand Materias2(string CodMateria, string Monto)
+        {
+
+            SqlCommand Comando = new SqlCommand();
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.NVarChar, 40);
+            SqlParametros.Value = CodMateria;
             SqlParametros = Comando.Parameters.Add("@Monto", SqlDbType.Money);
-            SqlParametros.Value = int.Parse(monto);
-                    return Comando;
+            SqlParametros.Value = Convert.ToDecimal(Monto);
+
+
+
+            return Comando;
         }
 
         public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes,

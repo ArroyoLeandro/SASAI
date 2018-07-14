@@ -49,26 +49,7 @@ namespace SASAI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            AccesoDatos aq = new AccesoDatos();
-            int aux=0;
-            for (int i = 0; i < dataGridView1.RowCount; i++) {
 
-                  MessageBox.Show(dataGridView1.Rows[i].Cells[11].Value.ToString());
-
-
-                if (dataGridView1.Rows[i].Cells[11].Value.ToString()== "True")
-                {
-                     aux = 1;
-                }
-                else { aux = 0; }
-
-               string consulta = "update dbo.Preinscriptos  set baja ="+aux +" where DNI ="+ dataGridView1.Rows[i].Cells[0].Value;
-
-               aq.cargaTabla("asd", consulta, ref ds);
-
-
-            }
         }
     }
 }

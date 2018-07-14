@@ -69,6 +69,18 @@
     <Compile Include="Administrador\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cursos\AltaMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\AltaMaterias.Designer.cs">
+      <DependentUpon>AltaMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\FiltroMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\FiltroMaterias.Designer.cs">
+      <DependentUpon>FiltroMaterias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Preinscripciones\BajaPreinscriptos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\AltaMaterias.resx">
+      <DependentUpon>AltaMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\FiltroMaterias.resx">
+      <DependentUpon>FiltroMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preinscripciones\BajaPreinscriptos.resx">
       <DependentUpon>BajaPreinscriptos.cs</DependentUpon>

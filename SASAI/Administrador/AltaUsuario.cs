@@ -76,13 +76,6 @@ namespace SASAI
 
 
         }
-
-        private void ABMAdministrador_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((int)e.KeyChar == (int)Keys.Escape)
-            {
-                this.Close();
-            }
-        }
+        
     }
 }

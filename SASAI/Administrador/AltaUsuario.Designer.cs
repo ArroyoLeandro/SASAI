@@ -92,7 +92,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Alta Usuario";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ABMAdministrador_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
