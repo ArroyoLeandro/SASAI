@@ -1,10 +1,10 @@
---use master
+use master
 --drop database sasai
 
---create database SASAI
---go
+create database SASAI
+go
 
---use SASAI
+use SASAI
 --go
 create table Usuarios (
 usuario varchar(20) not null,
