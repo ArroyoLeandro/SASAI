@@ -16,7 +16,7 @@ namespace SASAI
 
 
 
-        public static void Inscriptos(ref SqlCommand Comando, DataRow fila)
+        public static void InscriptosDNI(ref SqlCommand Comando, DataRow fila)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@DNI", SqlDbType.Int);
@@ -24,68 +24,19 @@ namespace SASAI
         }
 
     
-        public static SqlCommand Materias (string CodMateria,string NombreMateria)
+        public static SqlCommand Materias (string CodMateria,string NombreMateria,string monto )
         {
         
             SqlCommand Comando = new SqlCommand();
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.NVarChar, 40);
+            SqlParametros = Comando.Parameters.Add("@CodMateria", SqlDbType.NVarChar, 40);
             SqlParametros.Value = CodMateria;
-            SqlParametros = Comando.Parameters.Add("@Name", SqlDbType.NVarChar, 100);
+            SqlParametros = Comando.Parameters.Add("@NombreMateria", SqlDbType.NVarChar, 100);
             SqlParametros.Value = NombreMateria;
-            //SqlParametros = Comando.Parameters.Add("@Monto", SqlDbType.Money);
-            //SqlParametros.Value = int.Parse(monto);
-            //,string monto 
-            return Comando;
-        }
-
-        public static SqlCommand Materias2(string CodMateria, string Monto)
-        {
-
-            SqlCommand Comando = new SqlCommand();
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.NVarChar, 40);
-            SqlParametros.Value = CodMateria;
             SqlParametros = Comando.Parameters.Add("@Monto", SqlDbType.Money);
-
-            decimal pu = Convert.ToDecimal(Monto);
-            SqlParametros.Value = decimal.ToDouble(pu);
-
-
-            return Comando;
+            SqlParametros.Value = int.Parse(monto);
+                    return Comando;
         }
-
-        public static SqlCommand MateriasValidar(string NombreM)
-        {
-
-            SqlCommand Comando = new SqlCommand();
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Name", SqlDbType.NVarChar, 100);
-            SqlParametros.Value = NombreM;
-
-            return Comando;
-        }
-
-        public static SqlCommand MateriasCarga(string CodM, string NombreM, string PrecioM)
-        {
-
-            SqlCommand Comando = new SqlCommand();
-            SqlParameter SqlParametros = new SqlParameter();
-
-            SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.NVarChar, 40);
-            SqlParametros.Value = CodM;
-
-            SqlParametros = Comando.Parameters.Add("@Name", SqlDbType.NVarChar, 100);
-            SqlParametros.Value = NombreM;
-            
-            SqlParametros = Comando.Parameters.Add("@Monto", SqlDbType.Money);
-            SqlParametros.Value = Convert.ToDecimal(PrecioM);
-
-
-
-            return Comando;
-        }
-
 
         public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes,
                                              string Despues, DateTime fecha)
@@ -188,9 +139,9 @@ namespace SASAI
          }
 
         public static SqlCommand Inscriptos 
-             (int DNI,string codcurso  ,int IDinscripto ,string Nombre ,string Apellido,
-             string Email, string Telefono,bool Const_Analitico,bool Const_Cuil,
-             bool Fotoc_DNI, bool Foto4x4, bool Const_Trabajo, int MontoPagar,
+             (int DNI,string Nombre ,string Apellido, string UltimoCurso,
+             string Email, string Telefono,bool Activo,bool Const_Analitico,bool Const_Cuil,
+             bool Fotoc_DNI, bool Foto4x4, bool Const_Trabajo,
               DateTime FechaEntregaDoc, string observaciones             )
             
          {
@@ -198,17 +149,19 @@ namespace SASAI
              SqlParameter SqlParametros = new SqlParameter();
           SqlParametros = Comando.Parameters.Add ("@DNI",SqlDbType.Int);
              SqlParametros.Value = DNI ;
-             SqlParametros = Comando.Parameters.Add ("@codcurso",SqlDbType.NVarChar,40);
-             SqlParametros.Value = codcurso ;
-          SqlParametros = Comando.Parameters.Add ("@IDinscripto",SqlDbType.Int);
-             SqlParametros.Value = IDinscripto ;
              SqlParametros = Comando.Parameters.Add ("@Nombre",SqlDbType.NVarChar,50);
              SqlParametros.Value = Nombre  ;
              SqlParametros = Comando.Parameters.Add ("@Apellido",SqlDbType.NVarChar,50);
              SqlParametros.Value = Apellido;
-          SqlParametros = Comando.Parameters.Add ("@Telefono",SqlDbType.NVarChar,50);
+            SqlParametros = Comando.Parameters.Add("@UltimoCurso", SqlDbType.NVarChar, 40);
+            SqlParametros.Value = UltimoCurso;
+            SqlParametros = Comando.Parameters.Add("@Email", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = Email;
+            SqlParametros = Comando.Parameters.Add ("@Telefono",SqlDbType.NVarChar,50);
              SqlParametros.Value = Telefono;
-          SqlParametros = Comando.Parameters.Add ("@Const_Analitico",SqlDbType.Bit);
+            SqlParametros = Comando.Parameters.Add("@Activo", SqlDbType.Bit);
+            SqlParametros.Value = Activo;
+            SqlParametros = Comando.Parameters.Add ("@Const_Analitico",SqlDbType.Bit);
              SqlParametros.Value = Const_Analitico;
           SqlParametros = Comando.Parameters.Add ("@Const_Cuil",SqlDbType.Bit);
              SqlParametros.Value = Const_Cuil;
@@ -218,8 +171,6 @@ namespace SASAI
              SqlParametros.Value = Foto4x4;
           SqlParametros = Comando.Parameters.Add ("@Const_Trabajo",SqlDbType.Bit);
              SqlParametros.Value = Const_Trabajo;
-          SqlParametros = Comando.Parameters.Add ("@MontoPagar",SqlDbType.Money);
-             SqlParametros.Value = MontoPagar;
           SqlParametros = Comando.Parameters.Add ("@FechaEntregaDoc",SqlDbType.Date);
              SqlParametros.Value = FechaEntregaDoc;
           SqlParametros = Comando.Parameters.Add ("@observaciones",SqlDbType.NVarChar,50);
@@ -228,6 +179,8 @@ namespace SASAI
           return Comando;
              
          }
+
+
         
          public static SqlCommand Interesados 
              (string Email,string Nombre,string Apellido, DateTime FechaConsulta)

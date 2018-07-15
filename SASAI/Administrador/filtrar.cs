@@ -93,5 +93,15 @@ namespace SASAI
             listBox1.Items.Add("ControlAlumxMatexCurso");
             listBox1.SelectedIndex = 0;
         }
+
+        private void filtrar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show((e.KeyChar == (int)Keys.Escape).ToString());
+            if (e.KeyChar == (int)Keys.Escape)
+            {
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+        }
     }
 }

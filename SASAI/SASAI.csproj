@@ -57,12 +57,6 @@
     <Compile Include="Administrador\BajayModificacionAdministrador.Designer.cs">
       <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\Alta_Materias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cursos\Alta_Materias.Designer.cs">
-      <DependentUpon>Alta_Materias.cs</DependentUpon>
-    </Compile>
     <Compile Include="Alumnos\AlumnoSelecionado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,12 +68,6 @@
     </Compile>
     <Compile Include="Administrador\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cursos\Flt_Materias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cursos\Flt_Materias.Designer.cs">
-      <DependentUpon>Flt_Materias.cs</DependentUpon>
     </Compile>
     <Compile Include="Preinscripciones\BajaPreinscriptos.cs">
       <SubType>Form</SubType>
@@ -177,9 +165,6 @@
     <EmbeddedResource Include="Administrador\BajayModificacionAdministrador.resx">
       <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\Alta_Materias.resx">
-      <DependentUpon>Alta_Materias.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\AlumnoSelecionado.resx">
       <DependentUpon>AlumnoSelecionado.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrador\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\Flt_Materias.resx">
-      <DependentUpon>Flt_Materias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preinscripciones\BajaPreinscriptos.resx">
       <DependentUpon>BajaPreinscriptos.cs</DependentUpon>

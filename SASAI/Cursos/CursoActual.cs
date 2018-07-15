@@ -28,21 +28,18 @@ namespace SASAI
             AccesoDatos aq = new AccesoDatos();
             DataSet ds = new DataSet();
 
+            string consulta2 = "select codCurso, FechaInicio,FechaFinal from Cursos where actual = 1";
+
+             
+
             try
             {
-                string consulta2 = "select codCurso, FechaInicio,FechaFinal from Cursos where actual = 1";
                 aq.cargaTabla("Cursos", consulta2, ref ds);
                 lb_NombreCurso.Text = "Nombre Curso: " + ds.Tables["Cursos"].Rows[0][0].ToString();
                 lb_FechaInicio.Text = "Fecha de Inicio: " + ds.Tables["Cursos"].Rows[0][1].ToString();
-                lb_FechaFinal.Text = "Fecha de Final: " + ds.Tables["Cursos"].Rows[0][2].ToString();
-            }
-            catch(Exception ex) { MessageBox.Show(ex.ToString());}
+                lb_FechaFinal.Text = "Fecha de Inicio: " + ds.Tables["Cursos"].Rows[0][2].ToString();
 
-
-            try
-            {
-                
-                string consulta = "select Nombre, Apellido, DNI, Email, Telefono from Inscriptos  inner join Cursos on Cursos.CodCurso = Inscriptos.UltimoCurso   where Cursos.actual = 1";
+                string consulta = "select Nombre, Apellido, DNI, Email, Telefono from Inscriptos inner join Cursos on Cursos.CodCurso = Inscriptos.UltimoCurso   where Cursos.actual = 1 ";
 
                 aq.cargaTabla("Inscriptos", consulta, ref ds);
 
