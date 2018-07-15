@@ -12,17 +12,23 @@ using System.Data.SqlClient;
 
 namespace SASAI
 {
+    
+
     public partial class Materias : Form
     {
         public Materias()
         {
             InitializeComponent();
         }
-       
+
+
+        public static String Variable;
+
+
         private void cargarGrid() {
             AccesoDatos aq = new AccesoDatos();
             DataSet ds = new DataSet();
-
+            
 
             try
             {
@@ -54,14 +60,37 @@ namespace SASAI
 
         private void btn_Filtrar_M_Click(object sender, EventArgs e)
         {
-           
 
+            //Formularios.AbrirFormularioHijos(new Flt_Materias());
+            string consulta = "";
+            Flt_Materias f = new Flt_Materias();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                consulta = f.consulta;
+
+            }
+            //MessageBox.Show(consulta);
+            try
+            {
+                AccesoDatos aq = new AccesoDatos();
+                DataSet ds = new DataSet();
+                aq.cargaTabla("Materias", consulta, ref ds);
+                ListadoMaterias.DataSource = ds.Tables["Materias"];
+            }
+            catch (Exception) { }
+            //cargarGrid();
         }
 
         private void btn_Agregar_M_Click(object sender, EventArgs e)
         {
-            
-           
+            string CantidadFilas = ListadoMaterias.Rows.Count.ToString();
+            int cant = Convert.ToInt32(CantidadFilas.ToString());
+            cant = cant - 1;
+
+            Variable = cant.ToString();
+
+            Formularios.AbrirFormularioHijos(new Alta_Materias());
+            cargarGrid();
         }
 
         private void btn_Modificar_M_Click(object sender, EventArgs e)
@@ -92,9 +121,10 @@ namespace SASAI
             string CantidadFilas = ListadoMaterias.Rows.Count.ToString();
             int cant = Convert.ToInt32(CantidadFilas.ToString());
             cant = cant - 1;
+
             //MessageBox.Show(CantidadFilas);
             //MessageBox.Show(cant.ToString());
-            // cargo en la texbox el id desde la tabla datagrid
+            // cargo en la texbox desde la tabla datagrid
             int i = 0;
 
             for (i = 0; i < cant; i++) { 

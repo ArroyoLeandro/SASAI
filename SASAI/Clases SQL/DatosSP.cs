@@ -47,12 +47,45 @@ namespace SASAI
             SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.NVarChar, 40);
             SqlParametros.Value = CodMateria;
             SqlParametros = Comando.Parameters.Add("@Monto", SqlDbType.Money);
-            SqlParametros.Value = Convert.ToDecimal(Monto);
+
+            decimal pu = Convert.ToDecimal(Monto);
+            SqlParametros.Value = decimal.ToDouble(pu);
+
+
+            return Comando;
+        }
+
+        public static SqlCommand MateriasValidar(string NombreM)
+        {
+
+            SqlCommand Comando = new SqlCommand();
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Name", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = NombreM;
+
+            return Comando;
+        }
+
+        public static SqlCommand MateriasCarga(string CodM, string NombreM, string PrecioM)
+        {
+
+            SqlCommand Comando = new SqlCommand();
+            SqlParameter SqlParametros = new SqlParameter();
+
+            SqlParametros = Comando.Parameters.Add("@ID", SqlDbType.NVarChar, 40);
+            SqlParametros.Value = CodM;
+
+            SqlParametros = Comando.Parameters.Add("@Name", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = NombreM;
+            
+            SqlParametros = Comando.Parameters.Add("@Monto", SqlDbType.Money);
+            SqlParametros.Value = Convert.ToDecimal(PrecioM);
 
 
 
             return Comando;
         }
+
 
         public static SqlCommand DetalleMov (string CodMov ,string Usuario ,string Antes,
                                              string Despues, DateTime fecha)

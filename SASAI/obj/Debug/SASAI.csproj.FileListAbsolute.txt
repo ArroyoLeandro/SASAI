@@ -287,5 +287,5 @@ C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.csproj.GenerateResourc
 C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
 C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.exe
 C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.pdb
-C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.Cursos.FiltroMaterias.resources
-C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.Cursos.AltaMaterias.resources
+C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.Flt_Materias.resources
+C:\Users\arroyo\Desktop\Subir\SASAI\SASAI\obj\Debug\SASAI.Alta_Materias.resources

@@ -28,5 +28,21 @@ namespace SASAI
 
             Formularios.AbrirFormularioHijos(CursoF);
         }
+
+        private void CursoT_Load(object sender, EventArgs e)
+        {
+            AccesoDatos aq = new AccesoDatos();
+            DataSet ds = new DataSet();
+
+            try
+            {
+
+                string consulta2 = "select codCurso, FechaInicio,FechaFinal from Cursos";
+                aq.cargaTabla("Cursos", consulta2, ref ds);
+
+                dataGridView1.DataSource = ds.Tables["Cursos"];
+            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+        }
     }
 }
