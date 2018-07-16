@@ -392,6 +392,11 @@ where DNI =@DNI
 return 
 go
 
+<<<<<<< HEAD
+=======
+go
+
+>>>>>>> 6cf2dd72b07a70bb99af23110348ac61df78a3a3
 create procedure verificarExistenciaInscripto (
 @DNI int
 
