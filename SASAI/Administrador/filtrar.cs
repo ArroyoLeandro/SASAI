@@ -34,7 +34,7 @@ namespace SASAI
 
         public void armarconsulta(ref string ar) {
             string d1 = " AND ";
-            string d2 = "";
+           
             int num = 0;
             if (ar == string.Empty)
             {

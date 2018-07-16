@@ -20,40 +20,9 @@ namespace SASAI
 
 
 
-        public bool EliminarInscripto(String NombreTabla, DataSet ds, string procedure, DataRow fila)
-        {
-            int FilasEliminadas = 0;
-            
-                SqlCommand Comando = new SqlCommand();
-                AccesoDatos ad = new AccesoDatos();
-                DatosSP.Inscriptos(ref Comando, fila);
-            FilasEliminadas = ad.EjecutarProcedimientoAlmacenado(Comando, procedure);
-            
-            if (FilasEliminadas >= 1)
-                return true;
-            else
-                return false;
-        }
+       
 
-
-        public  bool EliminarTodosInscriptos(String NombreTabla, DataSet ds,string procedure)
-        {
-            int FilasEliminadas = 0;
-            foreach (DataRow fila in ds.Tables[NombreTabla].Rows)
-            {
-                SqlCommand Comando = new SqlCommand();
-                fila.RejectChanges();
-                AccesoDatos ad = new AccesoDatos();
-                DatosSP.Inscriptos(ref Comando, fila);
-                FilasEliminadas = ad.EjecutarProcedimientoAlmacenado(Comando, procedure);
-            }
-            if (FilasEliminadas >= 1)
-                return true;
-            else
-                return false;
-        }
-        
-
+  
    
 
 

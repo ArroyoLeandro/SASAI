@@ -391,3 +391,18 @@ DNI= @DNI ,Nombre= @Nombre ,Apellido= @Apellido ,UltimoCurso= @UltimoCurso  ,Ema
 where DNI =@DNI
 return 
 go
+
+create procedure verificarExistenciaInscripto (
+@DNI int
+
+)
+as 
+
+if ((select COUNT (DNI)from Inscriptos where DNI=@DNI)=0) begin 
+
+select * from Preinscriptos where DNI=@DNI
+
+ end
+ else 
+ begin select * from Inscriptos where DNI=@DNI end
+GO

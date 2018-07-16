@@ -16,13 +16,7 @@ namespace SASAI
 
 
 
-        public static void Inscriptos(ref SqlCommand Comando, DataRow fila)
-        {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@DNI", SqlDbType.Int);
-            SqlParametros.Value = fila["DNI"];
-        }
-
+      
     
         public static SqlCommand Materias (string CodMateria,string NombreMateria)
         {

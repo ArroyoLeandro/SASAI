@@ -44,6 +44,7 @@ namespace SASAI
             {
                 administradorToolStripMenuItem.Visible = false;
             }
+            estadistcasToolStripMenuItem.Visible = false;
         }
 
         private void todosToolStripMenuItem_Click(object sender, EventArgs e)

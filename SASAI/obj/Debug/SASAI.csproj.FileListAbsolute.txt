@@ -351,3 +351,4 @@ D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.csproj.GenerateResource.cache
 D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
 D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.exe
 D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.pdb
+D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.InteresadoEspecifico.resources

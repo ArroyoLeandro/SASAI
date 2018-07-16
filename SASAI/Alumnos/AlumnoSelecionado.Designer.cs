@@ -32,7 +32,6 @@
             this.bt_Cancelar = new System.Windows.Forms.Button();
             this.tb_Telefono = new System.Windows.Forms.TextBox();
             this.tb_Email = new System.Windows.Forms.TextBox();
-            this.tb_IDInscripto = new System.Windows.Forms.TextBox();
             this.tb_CodCurso = new System.Windows.Forms.TextBox();
             this.tb_DNI = new System.Windows.Forms.TextBox();
             this.tb_Observaciones = new System.Windows.Forms.TextBox();
@@ -48,7 +47,6 @@
             this.lb_Documentos = new System.Windows.Forms.Label();
             this.lb_Telefono = new System.Windows.Forms.Label();
             this.lb_email = new System.Windows.Forms.Label();
-            this.lb_idinscripto = new System.Windows.Forms.Label();
             this.lb_codcurso = new System.Windows.Forms.Label();
             this.lb_dni = new System.Windows.Forms.Label();
             this.lb_nombre = new System.Windows.Forms.Label();
@@ -85,6 +83,7 @@
             this.bt_Cancelar.TabIndex = 56;
             this.bt_Cancelar.Text = "CANCELAR";
             this.bt_Cancelar.UseVisualStyleBackColor = true;
+            this.bt_Cancelar.Click += new System.EventHandler(this.bt_Cancelar_Click);
             // 
             // tb_Telefono
             // 
@@ -99,13 +98,6 @@
             this.tb_Email.Name = "tb_Email";
             this.tb_Email.Size = new System.Drawing.Size(100, 20);
             this.tb_Email.TabIndex = 54;
-            // 
-            // tb_IDInscripto
-            // 
-            this.tb_IDInscripto.Location = new System.Drawing.Point(123, 115);
-            this.tb_IDInscripto.Name = "tb_IDInscripto";
-            this.tb_IDInscripto.Size = new System.Drawing.Size(100, 20);
-            this.tb_IDInscripto.TabIndex = 53;
             // 
             // tb_CodCurso
             // 
@@ -236,15 +228,6 @@
             this.lb_email.TabIndex = 34;
             this.lb_email.Text = "Email:";
             // 
-            // lb_idinscripto
-            // 
-            this.lb_idinscripto.AutoSize = true;
-            this.lb_idinscripto.Location = new System.Drawing.Point(46, 122);
-            this.lb_idinscripto.Name = "lb_idinscripto";
-            this.lb_idinscripto.Size = new System.Drawing.Size(64, 13);
-            this.lb_idinscripto.TabIndex = 33;
-            this.lb_idinscripto.Text = "ID Inscripto:";
-            // 
             // lb_codcurso
             // 
             this.lb_codcurso.AutoSize = true;
@@ -298,33 +281,37 @@
             this.lb_Fecha.Size = new System.Drawing.Size(143, 13);
             this.lb_Fecha.TabIndex = 60;
             this.lb_Fecha.Text = "Fecha Entrega Documentos:";
+            this.lb_Fecha.Visible = false;
             // 
             // tb_Fecha
             // 
             this.tb_Fecha.Location = new System.Drawing.Point(447, 292);
             this.tb_Fecha.Name = "tb_Fecha";
+            this.tb_Fecha.ReadOnly = true;
             this.tb_Fecha.Size = new System.Drawing.Size(100, 20);
             this.tb_Fecha.TabIndex = 61;
+            this.tb_Fecha.Visible = false;
             // 
             // lb_top
             // 
             this.lb_top.AutoSize = true;
-            this.lb_top.Location = new System.Drawing.Point(222, 30);
+            this.lb_top.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_top.Location = new System.Drawing.Point(190, 23);
             this.lb_top.Name = "lb_top";
-            this.lb_top.Size = new System.Drawing.Size(42, 13);
+            this.lb_top.Size = new System.Drawing.Size(251, 31);
             this.lb_top.TabIndex = 62;
-            this.lb_top.Text = "Alumno";
+            this.lb_top.Text = "Detalles del alumno";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(382, 85);
+            this.textBox1.Location = new System.Drawing.Point(374, 93);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 65;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(382, 65);
+            this.textBox2.Location = new System.Drawing.Point(374, 73);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 64;
@@ -332,7 +319,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(298, 65);
+            this.label1.Location = new System.Drawing.Point(324, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 63;
@@ -341,11 +328,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 100);
+            this.label2.Location = new System.Drawing.Point(324, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 66;
             this.label2.Text = "Apellido";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lb_Analitico
             // 
@@ -369,7 +357,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 492);
+            this.ClientSize = new System.Drawing.Size(657, 514);
             this.Controls.Add(this.cb_analitico);
             this.Controls.Add(this.lb_Analitico);
             this.Controls.Add(this.label2);
@@ -385,7 +373,6 @@
             this.Controls.Add(this.bt_Cancelar);
             this.Controls.Add(this.tb_Telefono);
             this.Controls.Add(this.tb_Email);
-            this.Controls.Add(this.tb_IDInscripto);
             this.Controls.Add(this.tb_CodCurso);
             this.Controls.Add(this.tb_DNI);
             this.Controls.Add(this.tb_Observaciones);
@@ -401,7 +388,6 @@
             this.Controls.Add(this.lb_Documentos);
             this.Controls.Add(this.lb_Telefono);
             this.Controls.Add(this.lb_email);
-            this.Controls.Add(this.lb_idinscripto);
             this.Controls.Add(this.lb_codcurso);
             this.Controls.Add(this.lb_dni);
             this.Controls.Add(this.lb_nombre);
@@ -418,7 +404,6 @@
         private System.Windows.Forms.Button bt_Cancelar;
         private System.Windows.Forms.TextBox tb_Telefono;
         private System.Windows.Forms.TextBox tb_Email;
-        private System.Windows.Forms.TextBox tb_IDInscripto;
         private System.Windows.Forms.TextBox tb_CodCurso;
         private System.Windows.Forms.TextBox tb_DNI;
         private System.Windows.Forms.TextBox tb_Observaciones;
@@ -434,7 +419,6 @@
         private System.Windows.Forms.Label lb_Documentos;
         private System.Windows.Forms.Label lb_Telefono;
         private System.Windows.Forms.Label lb_email;
-        private System.Windows.Forms.Label lb_idinscripto;
         private System.Windows.Forms.Label lb_codcurso;
         private System.Windows.Forms.Label lb_dni;
         private System.Windows.Forms.Label lb_nombre;
