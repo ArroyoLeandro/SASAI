@@ -188,44 +188,44 @@ namespace SASAI
          }
 
         public static SqlCommand Inscriptos 
-             (int DNI,string codcurso  ,int IDinscripto ,string Nombre ,string Apellido,
-             string Email, string Telefono,bool Const_Analitico,bool Const_Cuil,
-             bool Fotoc_DNI, bool Foto4x4, bool Const_Trabajo, int MontoPagar,
-              DateTime FechaEntregaDoc, string observaciones             )
+             (int DNI, string Nombre, string Apellido, string UltimoCurso,
+             string Email, string Telefono, bool Activo, bool Const_Analitico, bool Const_Cuil,
+             bool Fotoc_DNI, bool Foto4x4, bool Const_Trabajo,
+              DateTime FechaEntregaDoc, string observaciones)
             
          {
             SqlCommand Comando = new SqlCommand();
              SqlParameter SqlParametros = new SqlParameter();
-          SqlParametros = Comando.Parameters.Add ("@DNI",SqlDbType.Int);
-             SqlParametros.Value = DNI ;
-             SqlParametros = Comando.Parameters.Add ("@codcurso",SqlDbType.NVarChar,40);
-             SqlParametros.Value = codcurso ;
-          SqlParametros = Comando.Parameters.Add ("@IDinscripto",SqlDbType.Int);
-             SqlParametros.Value = IDinscripto ;
-             SqlParametros = Comando.Parameters.Add ("@Nombre",SqlDbType.NVarChar,50);
-             SqlParametros.Value = Nombre  ;
-             SqlParametros = Comando.Parameters.Add ("@Apellido",SqlDbType.NVarChar,50);
-             SqlParametros.Value = Apellido;
-          SqlParametros = Comando.Parameters.Add ("@Telefono",SqlDbType.NVarChar,50);
-             SqlParametros.Value = Telefono;
-          SqlParametros = Comando.Parameters.Add ("@Const_Analitico",SqlDbType.Bit);
-             SqlParametros.Value = Const_Analitico;
-          SqlParametros = Comando.Parameters.Add ("@Const_Cuil",SqlDbType.Bit);
-             SqlParametros.Value = Const_Cuil;
-          SqlParametros = Comando.Parameters.Add ("@Fotoc_DNI",SqlDbType.Bit);
-             SqlParametros.Value = Fotoc_DNI;
-          SqlParametros = Comando.Parameters.Add ("@Foto4x4",SqlDbType.Bit);
-             SqlParametros.Value = Foto4x4;
-          SqlParametros = Comando.Parameters.Add ("@Const_Trabajo",SqlDbType.Bit);
-             SqlParametros.Value = Const_Trabajo;
-          SqlParametros = Comando.Parameters.Add ("@MontoPagar",SqlDbType.Money);
-             SqlParametros.Value = MontoPagar;
-          SqlParametros = Comando.Parameters.Add ("@FechaEntregaDoc",SqlDbType.Date);
-             SqlParametros.Value = FechaEntregaDoc;
-          SqlParametros = Comando.Parameters.Add ("@observaciones",SqlDbType.NVarChar,50);
-             SqlParametros.Value = observaciones;
-          
-          return Comando;
+            SqlParametros = Comando.Parameters.Add("@DNI", SqlDbType.Int);
+            SqlParametros.Value = DNI;
+            SqlParametros = Comando.Parameters.Add("@Nombre", SqlDbType.NVarChar, 50);
+            SqlParametros.Value = Nombre;
+            SqlParametros = Comando.Parameters.Add("@Apellido", SqlDbType.NVarChar, 50);
+            SqlParametros.Value = Apellido;
+            SqlParametros = Comando.Parameters.Add("@UltimoCurso", SqlDbType.NVarChar, 40);
+            SqlParametros.Value = UltimoCurso;
+            SqlParametros = Comando.Parameters.Add("@Email", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = Email;
+            SqlParametros = Comando.Parameters.Add("@Telefono", SqlDbType.NVarChar, 50);
+            SqlParametros.Value = Telefono;
+            SqlParametros = Comando.Parameters.Add("@Activo", SqlDbType.Bit);
+            SqlParametros.Value = Activo;
+            SqlParametros = Comando.Parameters.Add("@Const_Analitico", SqlDbType.Bit);
+            SqlParametros.Value = Const_Analitico;
+            SqlParametros = Comando.Parameters.Add("@Const_Cuil", SqlDbType.Bit);
+            SqlParametros.Value = Const_Cuil;
+            SqlParametros = Comando.Parameters.Add("@Fotoc_DNI", SqlDbType.Bit);
+            SqlParametros.Value = Fotoc_DNI;
+            SqlParametros = Comando.Parameters.Add("@Foto4x4", SqlDbType.Bit);
+            SqlParametros.Value = Foto4x4;
+            SqlParametros = Comando.Parameters.Add("@Const_Trabajo", SqlDbType.Bit);
+            SqlParametros.Value = Const_Trabajo;
+            SqlParametros = Comando.Parameters.Add("@FechaEntregaDoc", SqlDbType.Date);
+            SqlParametros.Value = FechaEntregaDoc;
+            SqlParametros = Comando.Parameters.Add("@observaciones", SqlDbType.NVarChar, 50);
+            SqlParametros.Value = observaciones;
+
+            return Comando;
              
          }
         

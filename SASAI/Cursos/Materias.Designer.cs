@@ -162,7 +162,6 @@
             this.Controls.Add(this.grp_Materias);
             this.Controls.Add(this.ListadoMaterias);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(593, 499);
             this.MinimizeBox = false;
             this.Name = "Materias";
             this.Text = "Materias";
