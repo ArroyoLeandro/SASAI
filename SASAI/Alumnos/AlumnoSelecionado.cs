@@ -16,94 +16,185 @@ namespace SASAI
     public partial class AlumnoSelecionado : Form
     {
         public string Alumno { get; set; }
-        public string Tabla { get; set; }
-        public AlumnoSelecionado(string alumno,string tabla= "Inscriptos")
+        public int Tabla { get; set; }
+        DataSet ds;
+        string consulta;
+        AccesoDatos sq;
+
+        public AlumnoSelecionado(string alumno,int tabla= 1)
         {
             InitializeComponent();
-
             Alumno = alumno;
+          //  MessageBox.Show(tabla.ToString());
             Tabla = tabla;
+
+
         }
-
-        private void AlumnoSelecionado_Load(object sender, EventArgs e)
+        public void CargarTextboxInscripto(DataSet ds)
         {
-            tb_DNI.Text = Alumno;
-            string consulta = "";
-            if (Tabla == "Preinscriptos") {
-             consulta = "select Nombre,Apellido,Email,Telefono,codcurso from " + Tabla +" where DNI= " + Alumno;
-            }
-            else {
-                 consulta = "select * from " + Tabla + " where DNI= " + Alumno;
+            tb_DNI.Text = ds.Tables[0].Rows[0]["DNI"].ToString();
+            tb_CodCurso.Text = ds.Tables[0].Rows[0]["UltimoCurso"].ToString();
+            textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
+            textBox1.Text = ds.Tables[0].Rows[0]["Apellido"].ToString();
+            tb_Email.Text = ds.Tables[0].Rows[0]["Email"].ToString();
+            tb_Telefono.Text = ds.Tables[0].Rows[0]["Telefono"].ToString();
+            tb_Observaciones.Text = ds.Tables[0].Rows[0]["Observaciones"].ToString();
+        }
+        public void CargarTextboxPreInscripto(DataSet ds)
+        {
+            tb_DNI.Text = ds.Tables[0].Rows[0]["DNI"].ToString();
+            tb_CodCurso.Text = ds.Tables[0].Rows[0]["CodCurso"].ToString();
+            textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
+            textBox1.Text = ds.Tables[0].Rows[0]["Apellido"].ToString();
+            tb_Email.Text = ds.Tables[0].Rows[0]["Email"].ToString();
+            tb_Telefono.Text = ds.Tables[0].Rows[0]["Telefono"].ToString();
 
-            }
-            AccesoDatos aq = new AccesoDatos();
-            DataSet ds = new DataSet();
-            aq.cargaTabla("tabla", consulta, ref ds);
+        }
+        public void CargarBoleanos(DataSet ds) {
+                
+            
+            if (ds.Tables[0].Rows[0]["Const_Analitico"].ToString() == "True") {
 
-            if (Tabla == "Preinscriptos")
+                cb_analitico.Checked = true;
+            }
+            else
             {
-              textBox1.Text=  ds.Tables[0].Rows[0]["Apellido"].ToString();
-              textBox2.Text=  ds.Tables[0].Rows[0]["Nombre"].ToString();
-              tb_CodCurso.Text = ds.Tables[0].Rows[0]["codcurso"].ToString();
-              tb_Email.Text = ds.Tables[0].Rows[0]["Email"].ToString();
-
-                lb_top.Text = textBox1.Text+" "+textBox2.Text;
-            }
-            else {
-                try
-                {
-                    textBox1.Text = ds.Tables[0].Rows[0]["Apellido"].ToString();
-                    textBox2.Text = ds.Tables[0].Rows[0]["Nombre"].ToString();
-                    tb_DNI.Text = ds.Tables[0].Rows[0]["DNI"].ToString();
-                    tb_CodCurso.Text = ds.Tables[0].Rows[0]["codcurso"].ToString();
-                    tb_Email.Text = ds.Tables[0].Rows[0]["Email"].ToString();
-                    tb_Telefono.Text = ds.Tables[0].Rows[0]["Telefono"].ToString();
-                    cb_activo.Checked = bool.Parse(ds.Tables[0].Rows[0]["Activo"].ToString());
-                    cb_cuil.Checked = bool.Parse(ds.Tables[0].Rows[0]["Const_Cuil"].ToString());
-                    cb_Dni.Checked =bool.Parse( ds.Tables[0].Rows[0]["Fotoc_DNI"].ToString());
-                    cb_analitico.Checked = bool.Parse(ds.Tables[0].Rows[0]["Const_Analitico"].ToString());
-                    cb_4x4.Checked = bool.Parse(ds.Tables[0].Rows[0]["Foto4x4"].ToString());
-                    cb_ConstanciaTrabajo.Checked = bool.Parse(ds.Tables[0].Rows[0]["Const_Trabajo"].ToString());
-                    tb_Fecha.Text = ds.Tables[0].Rows[0]["FechaEntregaDoc"].ToString();
-                    tb_Observaciones.Text = ds.Tables[0].Rows[0]["Observaciones"].ToString();
-
-
-
-                    lb_top.Text = textBox1.Text + " " + textBox2.Text;
+                cb_analitico.Checked = false;
                 }
-                catch (Exception ea) { MessageBox.Show(ea.ToString()); }
-               
+            if (ds.Tables[0].Rows[0]["Const_Cuil"].ToString() == "True")
+            {
+
+                cb_cuil.Checked = true;
+            }
+            else
+            {
+                cb_analitico.Checked = false;
+            }
+            if (ds.Tables[0].Rows[0]["Activo"].ToString() == "True")
+            {
+
+                cb_activo.Checked = true;
+            }
+            else
+            {
+                cb_activo.Checked = false;
+            }
+            if (ds.Tables[0].Rows[0]["Fotoc_DNI"].ToString() == "True")
+            {
+
+                cb_Dni.Checked = true;
                 
             }
+            else
+            {
+                cb_Dni.Checked = false;
+            }
+            if (ds.Tables[0].Rows[0]["Foto4x4"].ToString() == "True")
+            {
+
+                cb_4x4.Checked = true;
+            }
+            else
+            {
+                cb_4x4.Checked = false;
+            }
+            if (ds.Tables[0].Rows[0]["Const_Trabajo"].ToString() == "True")
+            {
+
+               cb_ConstanciaTrabajo.Checked = true;
+            }
+            else
+            {
+                cb_ConstanciaTrabajo.Checked = false;
+            }
+
+
+        }
+        private void AlumnoSelecionado_Load(object sender, EventArgs e)
+        {
+            sq = new AccesoDatos();
+            ds = new DataSet();
+            if (Tabla == 1) { 
+                consulta = "select * from Inscriptos where DNI="+Alumno;
+                sq.cargaTabla("TablaSelecionado", consulta, ref ds);
+                CargarTextboxInscripto(ds);
+                CargarBoleanos(ds);
+            }
+            else {
+                consulta = "select * from Preinscriptos where DNI=" + Alumno;
+                sq.cargaTabla("TablaSelecionado", consulta, ref ds);
+                CargarTextboxPreInscripto(ds);
+             
+            }
+            
+
         }
 
         private void bt_Aceptar_Click(object sender, EventArgs e)
         {
-            if (Tabla == "Preinscriptos")
+            if (Tabla == 1)
             {
-                /* string consulta= "insert into dbo.Inscriptos (DNI, Nombre, Apellido,UltimoCurso, Email, Telefono,Activo,Const_Analitico, Const_Cuil, Fotoc_DNI, Foto4x4, Const_Cuil, FechaEntregaDoc, observaciones) select "
-                */
-                AccesoDatos aq = new AccesoDatos();
-                DataSet ds = new DataSet();
-                SqlCommand comando = new SqlCommand();
+                DateTime fecha = new DateTime();
+                fecha = DateTime.Today;
+                tb_Fecha.Text = fecha.ToString();
+                
 
-              /*  comando = DatosSP.Inscriptos(int.Parse(tb_DNI.Text), tb_CodCurso.Text, textBox2.Text, textBox1.Text, tb_Email.Text, tb_Telefono.Text, bool.Parse(cb_activo.Checked.ToString())
-                     , bool.Parse(cb_analitico.Checked.ToString()),
-                   bool.Parse(cb_cuil.Checked.ToString()), bool.Parse(cb_Dni.Checked.ToString()), bool.Parse(cb_4x4.Checked.ToString()), bool.Parse(cb_ConstanciaTrabajo.Checked.ToString()), tb_Fecha.Text,tb_Observaciones.Text);
-                aq.EjecutarProcedimientoAlmacenado(comando, "CargaInscripto");
-                */
+                    AccesoDatos aq = new AccesoDatos();
+                    DataSet ds = new DataSet();
+                    SqlCommand comando = new SqlCommand();
+
+                string codcurso = "";
+
+                codcurso = "select CodCurso from Cursos where actual =1";
+                AccesoDatos aff = new AccesoDatos();
+                aff.cargaTabla("5:35AM..",codcurso,ref ds);
+
+              codcurso=  ds.Tables["5:35AM.."].Rows[0][0].ToString();
+              //  MessageBox.Show(codcurso);
+                
+
+
+
+                comando = DatosSP.Inscriptos(int.Parse(tb_DNI.Text), textBox2.Text, textBox1.Text, codcurso, tb_Email.Text, tb_Telefono.Text, cb_activo.Checked
+                       , cb_analitico.Checked,
+                    cb_cuil.Checked, cb_Dni.Checked, cb_4x4.Checked, cb_ConstanciaTrabajo.Checked, fecha, tb_Observaciones.Text);
+                aq.EjecutarProcedimientoAlmacenado(comando, "ModificarInscripto");
+                MessageBox.Show("Alumno modificado correctamente");
+                this.Close();
+
+
             }
             else
             {
-                AccesoDatos aq = new AccesoDatos();
-                DataSet ds = new DataSet();
-                SqlCommand comando = new SqlCommand();
+                    AccesoDatos aq = new AccesoDatos();
+                    DataSet ds = new DataSet();
+                    SqlCommand comando = new SqlCommand();
 
-              /*  comando = DatosSP.Inscriptos(int.Parse(tb_DNI.Text), tb_CodCurso.Text, textBox2.Text, textBox1.Text, tb_Email.Text, tb_Telefono.Text, bool.Parse(cb_activo.CheckState.ToString())
-                     , bool.Parse(cb_analitico.Checked.ToString()),
-                   bool.Parse(cb_cuil.Checked.ToString()), bool.Parse(cb_Dni.Checked.ToString()), bool.Parse(cb_4x4.Checked.ToString()), bool.Parse(cb_ConstanciaTrabajo.Checked.ToString()), tb_Fecha.Text.ToString(), tb_Observaciones.Text);
-                aq.EjecutarProcedimientoAlmacenado(comando, "ModificarInscripto"); */
+                DateTime fecha = new DateTime();
+                fecha = DateTime.Today;
+                tb_Fecha.Text = fecha.ToString();
+
+
+                comando = DatosSP.Inscriptos(int.Parse(tb_DNI.Text), textBox2.Text, textBox1.Text, tb_CodCurso.Text, tb_Email.Text, tb_Telefono.Text, cb_activo.Checked
+                        , cb_analitico.Checked,
+                     cb_cuil.Checked, cb_Dni.Checked, cb_4x4.Checked, cb_ConstanciaTrabajo.Checked, fecha, tb_Observaciones.Text);
+                aq.EjecutarProcedimientoAlmacenado(comando, "CargaInscripto");
+                MessageBox.Show("Alumno Inscripto correctamente");
+                this.Close();
             }
+
+
+
+            }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

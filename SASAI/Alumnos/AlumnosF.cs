@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace SASAI
 {
     public partial class AlumnosF : Form
     {
+       // public string qseyo { get; set; }
+        public int tablita { get; set; }
         public AlumnosF()
         {
             InitializeComponent();
@@ -29,58 +32,55 @@ namespace SASAI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string consulta = "";
-            armarconsulta(ref consulta, "Inscriptos");
-          //  MessageBox.Show(consulta);
+            SqlCommand comando = new SqlCommand();
             AccesoDatos aq = new AccesoDatos();
             DataSet ds = new DataSet();
+            /* DatosSP.Inscripto_DNI(ref comando, int.Parse(textBox1.Text));
 
-            aq.cargaTabla("Inscriptos", consulta, ref ds);
-
-            // para saber si existe..
-
-            //  MessageBox.Show( ds.Tables[0].Rows[0][0].ToString());
-            try {
-                if (ds.Tables["Inscriptos"].Rows[0][1].ToString() != string.Empty)
+             aq.EjecutarProcedimientoAlmacenado(comando, "verificarExistenciaInscripto");
+             */
+            string consulta = "exec verificarExistenciaInscripto " + textBox1.Text;
+            aq.cargaTabla("asd", consulta, ref ds);
+            dataGridView1.DataSource = ds.Tables[0];
+            try
+            {
+                if (dataGridView1.Columns[dataGridView1.Columns.Count - 1].HeaderText == "baja")
                 {
-                    AlumnoSelecionado aw = new AlumnoSelecionado(textBox1.Text);
-                    Formularios.AbrirFormularioHijos(aw);
+
+                    AlumnoSelecionado af = new AlumnoSelecionado(dataGridView1.Rows[0].Cells[0].Value.ToString(), 2);
+                    af.ShowDialog();
                 }
-                  }
-            catch (Exception ex) {
-                consulta = "select DNI,Nombre,Apellido,Email,Telefono,codcurso from Preinscriptos where DNI ="+textBox1.Text;
-                aq.cargaTabla("Preinscriptos", consulta, ref ds);
-                try {
-                    if (ds.Tables["Preinscriptos"].Rows[0][1].ToString() != string.Empty) {
-                        AlumnoSelecionado aw = new AlumnoSelecionado(textBox1.Text,"Preinscriptos");
-                        Formularios.AbrirFormularioHijos(aw);
-
-
+                else
+                {
+                    if (dataGridView1.Columns[dataGridView1.Columns.Count - 1].HeaderText == "observaciones")
+                    {
+                        AlumnoSelecionado af = new AlumnoSelecionado(dataGridView1.Rows[0].Cells[0].Value.ToString(), 1);
+                        af.ShowDialog();
                     }
+
+
                 }
-                catch (Exception )
-                { }
-             
             }
-            
+            catch { Exception ex; }
+        }
 
-           // dataGridView1.DataSource = ds.Tables["Inscriptos"];
-
-          //  Application.Exit();
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
 
-        public void armarconsulta(ref string ar,string tabla)
+
+        public void armarconsulta(ref string ar, string tabla)
         {
             string d1 = " AND ";
 
             int num = 0;
             if (ar == string.Empty)
             {
-                ar = "select * from  "+tabla;
+                ar = "select * from  " + tabla;
 
-                
+
             }
 
             if (textBox1.Text != string.Empty)
@@ -132,3 +132,5 @@ namespace SASAI
         }
     }
 }
+
+

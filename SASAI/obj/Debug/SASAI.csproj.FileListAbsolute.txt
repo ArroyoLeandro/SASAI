@@ -351,6 +351,7 @@ D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.csproj.GenerateResource.cache
 D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
 D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.exe
 D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.pdb
+<<<<<<< HEAD
 C:\Users\arroyo\Desktop\SASAI\SASAI\obj\Debug\SASAI.Cursos.Alta_Curso.resources
 C:\Users\arroyo\Desktop\SASAI\SASAI\obj\Debug\SASAI.Alta_Materias.resources
 C:\Users\arroyo\Desktop\SASAI\SASAI\obj\Debug\SASAI.Flt_Materias.resources
@@ -358,3 +359,6 @@ C:\Users\arroyo\Desktop\SASAI\SASAI\obj\Debug\SASAI.Especialidades.resources
 C:\Users\arroyo\Desktop\SASAI\SASAI\obj\Debug\SASAI.Alta_Especialidad.resources
 C:\Users\arroyo\Desktop\SASAI\SASAI\obj\Debug\SASAI.Especialidad_F.resources
 C:\Users\arroyo\Desktop\SASAI\SASAI\obj\Debug\SASAI.listarMaterias.resources
+=======
+D:\GitHub\SASAI\SASAI\obj\Debug\SASAI.InteresadoEspecifico.resources
+>>>>>>> a3925147fcaa8116dda081ffc807e9fb92971e74
