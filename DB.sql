@@ -1,11 +1,13 @@
 use master
 drop database sasai
+go
+
 create database SASAI
 go
-use SASAI
-
 
 use SASAI
+
+--go
 create table Usuarios (
 usuario varchar(20) not null,
 contrasena varchar(20) not null,
@@ -46,7 +48,7 @@ constraint pk_EspecialidadesXCurso Primary Key(codcurso,CodEspecialidad)
 )
 create table Especialidades (
 Codespecialidad varchar(40) not null,
-nombre varchar(40) not  null,
+nombre varchar(100) not  null,
 AniosAprox int not null,
 
 constraint pk_Especialidades Primary Key(codEspecialidad) 
@@ -154,7 +156,74 @@ select 'batman','123',7,0 union
 select 'robin','123',6,1 
 
 go
+
+select * from EspecialidadesXCursos
+go
+
+insert into Especialidades(Codespecialidad,nombre,AniosAprox)
+select '001','Tecnicatura Superior en Programacion',2 union
+select '002','Tecnicatura Superior en Sistemas Informaticos',1 union
+select '003','Ingenieria Mecanica',5 union
+select '004','Ingenieria Electrica',5 union
+select '005','Ingenieria Civil',5
+go
+
+insert into Materias(CodMateria,NombreMateria,Monto)
+select '001','Matematica',800 union
+select '002','Introduccion a la Programacion',800 union
+select '003','Introduccion a la Informatica',600
+go
+
+insert into Cursos(CodCurso,FechaInicio,FechaFinal,Nota_Min,CapacidadMax,actual)
+select '001','10/04/2018','09/06/2018',6,100,0 union
+select '002','10/06/2018','09/08/2018',6,100,1 union
+select '003','10/08/2018','10/10/2018',6,100,0 
+go
+
+insert into EspecialidadesXCursos(CodCurso,CodEspecialidad)
+select '001','001' union
+select '002','001' union
+select '003','001' union
+select '002','002' 
+go
+
+select * from Cursos
+
+
+insert into Inscriptos(DNI,Nombre,Apellido,UltimoCurso,Email,Telefono,Activo,Const_Analitico,Const_Cuil,Fotoc_DNI,Foto4x4,Const_Trabajo,FechaEntregaDoc)
+select 40459112, 'leandro', 'arroyo', '002', 'martin_arroyo@hotmail.es', 1161595480, 1, 1, 1, 1, 1,1, '15/07/2018' union
+select 40459113, 'mariano', 'perez', '002', 'mariano@hotmail.es', 1161595481, 1, 1, 1, 1, 1,1, '15/07/2018' union
+select 40459114, 'nehuen', 'fortes', '002', 'fortes@hotmail.es', 1161595482, 1, 1, 1, 1, 1,1, '15/07/2018'
+go
 ---------------------------- procedure------------------------------------------------------------------------------------
+
+create procedure MateriaModificacionNombre
+(@ID varchar(40), @Name varchar(100))
+
+as
+update Materias
+set 
+NombreMateria = @Name
+
+where CodMateria = @ID 
+return 
+go
+
+----------------------------------------------------------------------------------------------------------------
+create procedure MateriaModificacionPrecio
+(@ID varchar(40), @Monto money)
+
+as
+update Materias
+set 
+Monto = @Monto
+
+where CodMateria = @ID 
+return 
+go
+
+----------------------------------------------------------------------------------------------------------------
+
 go
 create procedure VerificarUsuario 
 @user varchar(20), @contra varchar(20), @acceso int
@@ -253,7 +322,38 @@ select @ar
 -- muestra -1 = USUARIO NO EXISTE
 -- muestra	1 = USUARIO Y CONTRASENA Y NO DADO DE BAJA PERFECTO.
   go
+  
+--------------------------------------------------------------------------------------------
+--drop procedure VerificarMateria
+--go
+create procedure VerificarMateria (
+@Name varchar(100) 
+)
+AS
+declare @ar int
+set @ar = 4 
 
+if ((select COUNT(NombreMateria)from Materias where NombreMateria = @Name)>0) 
+begin set @ar=-1
+end
+else begin set @ar=1 end
+
+select @ar
+  go  
+  -- muestra -1 = NOMBRE MATERIA NO EXISTE
+  -- muestra 1 = CASO CONTRARIO 
+
+--------------------------------------------------------------------------------------------
+--drop procedure CrearMateria
+--go
+create procedure CrearMateria(
+@ID varchar(40), @Name varchar(100), @Monto money)
+
+as
+insert into Materias(CodMateria,NombreMateria,Monto)
+select @ID,@Name,@Monto
+
+go
 --------------------------------------------------------------------------------------------
 create procedure CargaPreinscripto (
  @DNI int,@codcurso varchar(40),@IDinscripto int,@Nombre varchar(50),@Apellido varchar(50),
@@ -268,6 +368,9 @@ select @DNI,@codcurso,@IDinscripto,@Nombre,@Apellido,@Email,@Telefono,@DNIOLD,@T
 go
 --------------------------------------------------------------------------------------------
 
+go
+
+
 create procedure CargaInscripto (
 @DNI int, @Nombre varchar(50), @Apellido varchar(50),@UltimoCurso varchar(40),@Email varchar(100), @Telefono varchar(50), @activo bit,
  @Const_Analitico bit, @Const_Cuil bit, @Fotoc_DNI bit, @Foto4x4 bit, @Const_Trabajo bit, @FechaEntregaDoc date, @observaciones text)
@@ -277,7 +380,7 @@ select @DNI , @Nombre , @Apellido ,@UltimoCurso ,@Email , @Telefono, @activo,
  @Const_Analitico , @Const_Cuil , @Fotoc_DNI , @Foto4x4 , @Const_Trabajo , @FechaEntregaDoc, @observaciones
 go
 
---------------------------------------------------------------------------------------------
+go
 create procedure ModificarInscripto (
 @DNI int, @Nombre varchar(50), @Apellido varchar(50),@UltimoCurso varchar(40),@Email varchar(100), @Telefono varchar(50), @activo bit,
  @Const_Analitico bit, @Const_Cuil bit, @Fotoc_DNI bit, @Foto4x4 bit, @Const_Trabajo bit, @FechaEntregaDoc date, @observaciones text)
@@ -290,7 +393,3 @@ DNI= @DNI ,Nombre= @Nombre ,Apellido= @Apellido ,UltimoCurso= @UltimoCurso  ,Ema
 where DNI =@DNI
 return 
 go
-
-select top 3 * from Usuarios
-
-select * from Inscriptos
