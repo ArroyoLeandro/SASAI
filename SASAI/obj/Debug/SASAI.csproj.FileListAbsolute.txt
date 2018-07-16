@@ -320,3 +320,5 @@ D:\Users\nehuen\Desktop\as\leandro15\SASAI\obj\Debug\SASAI.csproj.GenerateResour
 D:\Users\nehuen\Desktop\as\leandro15\SASAI\obj\Debug\SASAI.csproj.CoreCompileInputs.cache
 D:\Users\nehuen\Desktop\as\leandro15\SASAI\obj\Debug\SASAI.exe
 D:\Users\nehuen\Desktop\as\leandro15\SASAI\obj\Debug\SASAI.pdb
+D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.Alta_Materias.resources
+D:\Users\nehuen\Desktop\as\SASAI\SASAI\obj\Debug\SASAI.Flt_Materias.resources
