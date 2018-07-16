@@ -42,15 +42,21 @@ namespace SASAI
             try
             {
                 comando = DatosSP.MateriasValidar(Nom_Materiaa);
-                aq.EjecutarProcedimientoAlmacenado(comando, "VerificarMateria");
+                aq.ConfigurarProcedure(ref comando, "VerificarMateria");
                 //MessageBox.Show("Nombre Valido");
-                return -1;
+                comando.Connection = aq.ObtenerConexion();
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read()) {
+                    return (int.Parse(reader[0].ToString()));
+                }
+
+                return -100;
             }
             catch (Exception ex)
             {
                // MessageBox.Show("Nombre Invalido");
-                MessageBox.Show(ex.ToString());
-                return 0;
+                //MessageBox.Show(ex.ToString());
+                return -100;
             }
 
 
@@ -62,12 +68,13 @@ namespace SASAI
             if (nombre != "" && precio != "")
             {
 
-                if (ValidarNombre(nombre) == -1)
+                if (ValidarNombre(nombre) == 1)
                 {
                     return true;
                 }
                 else
                 {
+                    MessageBox.Show("NOMBRE MATERIA REPETIDO");
                     return false;
                 }
             }

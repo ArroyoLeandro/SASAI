@@ -56,6 +56,38 @@ namespace SASAI
 
         }
 
+
+        public static int ValidarNombre(string Nom_Materiaa)
+        {
+
+            AccesoDatos aq = new AccesoDatos();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                comando = DatosSP.MateriasValidar(Nom_Materiaa);
+                aq.ConfigurarProcedure(ref comando, "VerificarMateria");
+                //MessageBox.Show("Nombre Valido");
+                comando.Connection = aq.ObtenerConexion();
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
+                {
+                    return (int.Parse(reader[0].ToString()));
+                }
+
+                return -100;
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show("Nombre Invalido");
+                //MessageBox.Show(ex.ToString());
+                return -100;
+            }
+
+
+        }
+
+
+
         private void Materias_Resize(object sender, EventArgs e)
         {
             ListadoMaterias.Height = this.Height - 150;
@@ -99,6 +131,9 @@ namespace SASAI
 
         private void btn_Modificar_M_Click(object sender, EventArgs e)
         {
+
+            
+
             AccesoDatos aq = new AccesoDatos();
             SqlCommand comando = new SqlCommand();
 
@@ -106,9 +141,15 @@ namespace SASAI
             {
 
 
-                comando = DatosSP.Materias(txb_ID_M.Text, txb_NOMBRE_M.Text);
+               
 
-                aq.EjecutarProcedimientoAlmacenado(comando, "MateriaModificacionNombre");
+                if (ValidarNombre(txb_NOMBRE_M.Text) == 1)
+                {
+                    comando = DatosSP.Materias(txb_ID_M.Text, txb_NOMBRE_M.Text);
+                    aq.EjecutarProcedimientoAlmacenado(comando, "MateriaModificacionNombre");
+                }
+                else { MessageBox.Show("Nombre Materia Repetido"); }
+
                 comando = DatosSP.Materias2(txb_ID_M.Text, txb_PRECIO_M.Text);
                 aq.EjecutarProcedimientoAlmacenado(comando, "MateriaModificacionPrecio");
                 cargarGrid();

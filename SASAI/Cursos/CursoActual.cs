@@ -20,7 +20,7 @@ namespace SASAI
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            //5 cargar alumnos x materias x cursos pero serian el curso actual.
         }
 
         private void CursoActual_Load(object sender, EventArgs e)

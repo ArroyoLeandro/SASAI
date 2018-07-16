@@ -162,15 +162,37 @@ namespace SASAI
              SqlParameter SqlParametros = new SqlParameter();
              SqlParametros = Comando.Parameters.Add ("@Codespecialidad",SqlDbType.NVarChar,40);
              SqlParametros.Value = Codespecialidad ;
-             SqlParametros = Comando.Parameters.Add ("@nombre",SqlDbType.NVarChar,40);
+             SqlParametros = Comando.Parameters.Add ("@nombre",SqlDbType.NVarChar,100);
              SqlParametros.Value = nombre;
-             SqlParametros = Comando.Parameters.Add ("@AniosAprox",SqlDbType.Int);
-             SqlParametros.Value = AniosAprox;
-          return Comando;
+            SqlParametros = Comando.Parameters.Add("@AniosAprox", SqlDbType.Int);
+            SqlParametros.Value = AniosAprox;
+            return Comando;
              
          }
-        
-         public static SqlCommand AlumnosxMateriasxCursos 
+
+
+
+        public static SqlCommand EspecialidadCarga(string CodE, string NombreE, string Duracion)
+        {
+
+            SqlCommand Comando = new SqlCommand();
+            SqlParameter SqlParametros = new SqlParameter();
+
+            SqlParametros = Comando.Parameters.Add("@Codespecialidad", SqlDbType.NVarChar, 40);
+            SqlParametros.Value = CodE;
+
+            SqlParametros = Comando.Parameters.Add("@nombre", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = NombreE;
+
+            SqlParametros = Comando.Parameters.Add("@AniosAprox", SqlDbType.Int);
+            SqlParametros.Value = int.Parse(Duracion);
+
+
+
+            return Comando;
+        }
+
+        public static SqlCommand AlumnosxMateriasxCursos 
              (int DNI,string CodMateria ,string Codcurso,string CodEspecialidad, int NotaMateria )
          {
             SqlCommand Comando = new SqlCommand();

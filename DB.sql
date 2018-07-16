@@ -1,6 +1,6 @@
-use master
-drop database sasai
-go
+--use master
+--drop database sasai
+--go
 
 create database SASAI
 go
@@ -221,7 +221,24 @@ Monto = @Monto
 where CodMateria = @ID 
 return 
 go
+----------------------------------------------------------------------------------------------------------------
+create procedure EspecialidadModificar
+(@Codespecialidad varchar(40),@nombre varchar(100),@AniosAprox int)
+ 
+as
+update Especialidades
+set 
+AniosAprox = @AniosAprox
+where Codespecialidad = @Codespecialidad 
+update Especialidades
+set 
+nombre = @nombre
+where Codespecialidad = @Codespecialidad 
+return 
+go
 
+--drop procedure EspecialidadModificar
+--go
 ----------------------------------------------------------------------------------------------------------------
 
 go
@@ -353,6 +370,21 @@ as
 insert into Materias(CodMateria,NombreMateria,Monto)
 select @ID,@Name,@Monto
 
+go
+
+--------------------------------------------------------------------------------------------
+
+create procedure CrearEspecialidad(
+@Codespecialidad varchar(40),@nombre varchar(100),@AniosAprox int)
+
+as
+insert into Especialidades(Codespecialidad,nombre,AniosAprox)
+select @Codespecialidad,@nombre,@AniosAprox
+
+go
+
+select * from Especialidades
+where Codespecialidad like '%00%' 
 go
 --------------------------------------------------------------------------------------------
 create procedure CargaPreinscripto (

@@ -57,10 +57,28 @@
     <Compile Include="Administrador\BajayModificacionAdministrador.Designer.cs">
       <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\Alta_Materias.cs">
+    <Compile Include="Especialidades\Alta_Especialidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\Alta_Materias.Designer.cs">
+    <Compile Include="Especialidades\Alta_Especialidad.Designer.cs">
+      <DependentUpon>Alta_Especialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\Alta_Curso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\Alta_Curso.Designer.cs">
+      <DependentUpon>Alta_Curso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Especialidades\Especialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especialidades\Especialidades.Designer.cs">
+      <DependentUpon>Especialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\Materias\Alta_Materias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\Materias\Alta_Materias.Designer.cs">
       <DependentUpon>Alta_Materias.cs</DependentUpon>
     </Compile>
     <Compile Include="Alumnos\AlumnoSelecionado.cs">
@@ -75,11 +93,23 @@
     <Compile Include="Administrador\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\Flt_Materias.cs">
+    <Compile Include="Cursos\Materias\Flt_Materias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\Flt_Materias.Designer.cs">
+    <Compile Include="Cursos\Materias\Flt_Materias.Designer.cs">
       <DependentUpon>Flt_Materias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Especialidades\Especialidad_F.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especialidades\Especialidad_F.Designer.cs">
+      <DependentUpon>Especialidad_F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos\Materias\listarMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cursos\Materias\listarMaterias.designer.cs">
+      <DependentUpon>listarMaterias.cs</DependentUpon>
     </Compile>
     <Compile Include="Preinscripciones\BajaPreinscriptos.cs">
       <SubType>Form</SubType>
@@ -157,10 +187,10 @@
     <Compile Include="Usuarios All\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\Materias.cs">
+    <Compile Include="Cursos\Materias\Materias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\Materias.Designer.cs">
+    <Compile Include="Cursos\Materias\Materias.Designer.cs">
       <DependentUpon>Materias.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -177,7 +207,16 @@
     <EmbeddedResource Include="Administrador\BajayModificacionAdministrador.resx">
       <DependentUpon>BajayModificacionAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\Alta_Materias.resx">
+    <EmbeddedResource Include="Especialidades\Alta_Especialidad.resx">
+      <DependentUpon>Alta_Especialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\Alta_Curso.resx">
+      <DependentUpon>Alta_Curso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Especialidades\Especialidades.resx">
+      <DependentUpon>Especialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\Materias\Alta_Materias.resx">
       <DependentUpon>Alta_Materias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\AlumnoSelecionado.resx">
@@ -192,8 +231,14 @@
     <EmbeddedResource Include="Administrador\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\Flt_Materias.resx">
+    <EmbeddedResource Include="Cursos\Materias\Flt_Materias.resx">
       <DependentUpon>Flt_Materias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Especialidades\Especialidad_F.resx">
+      <DependentUpon>Especialidad_F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos\Materias\listarMaterias.resx">
+      <DependentUpon>listarMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preinscripciones\BajaPreinscriptos.resx">
       <DependentUpon>BajaPreinscriptos.cs</DependentUpon>
@@ -225,7 +270,7 @@
     <EmbeddedResource Include="Usuarios All\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\Materias.resx">
+    <EmbeddedResource Include="Cursos\Materias\Materias.resx">
       <DependentUpon>Materias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -291,5 +336,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
