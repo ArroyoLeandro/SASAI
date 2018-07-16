@@ -101,13 +101,14 @@ namespace SASAI
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Preinscripciones.Confirmacion conf = new Preinscripciones.Confirmacion("Esta Seguro de querer cargar la Preinscripcion?");
+            Preinscripciones.Confirmacion conf = new Preinscripciones.Confirmacion();
             int registros_ok = 0;
             if (conf.ShowDialog()==DialogResult.OK)
            { 
 
             AccesoDatos aq = new AccesoDatos();
-            SqlCommand comando = new SqlCommand();
+              
+                SqlCommand comando = new SqlCommand();
 
             
            

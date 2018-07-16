@@ -12,11 +12,9 @@ namespace SASAI.Preinscripciones
 {
     public partial class Confirmacion : Form
     {
-        public string label { get; set; }
-        public Confirmacion(string textolabel)
+        public Confirmacion()
         {
             InitializeComponent();
-            label = textolabel;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,11 +27,6 @@ namespace SASAI.Preinscripciones
         {
             DialogResult = DialogResult.Cancel;
             this.Close();
-        }
-
-        private void Confirmacion_Load(object sender, EventArgs e)
-        {
-            label1.Text = label;
         }
     }
 }

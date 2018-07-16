@@ -18,7 +18,7 @@ namespace SASAI
             //
         }
 
-        /*
+
 
         public bool EliminarInscripto(String NombreTabla, DataSet ds, string procedure, DataRow fila)
         {
@@ -26,7 +26,7 @@ namespace SASAI
             
                 SqlCommand Comando = new SqlCommand();
                 AccesoDatos ad = new AccesoDatos();
-                DatosSP.InscriptosDNI(ref Comando, fila);
+                DatosSP.Inscriptos(ref Comando, fila);
             FilasEliminadas = ad.EjecutarProcedimientoAlmacenado(Comando, procedure);
             
             if (FilasEliminadas >= 1)
@@ -44,7 +44,7 @@ namespace SASAI
                 SqlCommand Comando = new SqlCommand();
                 fila.RejectChanges();
                 AccesoDatos ad = new AccesoDatos();
-                DatosSP.InscriptosDNI(ref Comando, fila);
+                DatosSP.Inscriptos(ref Comando, fila);
                 FilasEliminadas = ad.EjecutarProcedimientoAlmacenado(Comando, procedure);
             }
             if (FilasEliminadas >= 1)
@@ -52,7 +52,7 @@ namespace SASAI
             else
                 return false;
         }
-        */
+        
 
    
 

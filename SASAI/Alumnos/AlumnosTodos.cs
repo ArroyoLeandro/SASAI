@@ -29,7 +29,7 @@ namespace SASAI
         private void AlumnosTodos_Load(object sender, EventArgs e)
         {
             AccesoDatos aq = new AccesoDatos();
-            string consulta = "select top 50 * from inscriptos";
+            string consulta = "select * from inscriptos";
             
 
             aq.cargaTabla("Inscriptos", consulta, ref ds);
@@ -47,13 +47,9 @@ namespace SASAI
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-         
-
-           
-            string Dni = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-            MessageBox.Show(Dni);
-            AlumnoSelecionado aq = new AlumnoSelecionado(Dni);
-            Formularios.AbrirFormularioHijos(aq);
+          //  dataGridView1.Rows[].Cells[].Value;
+          //  AlumnoSelecionado aq = new AlumnoSelecionado(Dni);
+          //  Formularios.AbrirFormularioHijos(aq);
         }
     }
 }

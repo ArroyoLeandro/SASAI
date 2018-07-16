@@ -367,9 +367,7 @@ select @DNI,@codcurso,@IDinscripto,@Nombre,@Apellido,@Email,@Telefono,@DNIOLD,@T
 
 go
 --------------------------------------------------------------------------------------------
-
 go
-
 
 create procedure CargaInscripto (
 @DNI int, @Nombre varchar(50), @Apellido varchar(50),@UltimoCurso varchar(40),@Email varchar(100), @Telefono varchar(50), @activo bit,

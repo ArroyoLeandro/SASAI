@@ -29,6 +29,7 @@ namespace SASAI
             string consulta = "VerificarUsuario";
             SqlCommand comando = new SqlCommand();
 
+
             comando = Usuario_class.Usuarios_completo(Formularios.Usuario, txt_passAnterior.Text, 2);
             conexion.ConfigurarProcedure(ref comando, consulta);
             comando.Connection = conexion.ObtenerConexion();
