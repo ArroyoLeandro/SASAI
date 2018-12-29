@@ -1,0 +1,46 @@
+paso 1:
+cargar usuario y email del git.
+
+// en mi caso mi usuario es : SoldierIced
+
+git  config --global user.name "SoldierIced"   
+
+git  config --global user.email "nehuenfortes@hotmail.com"
+
+paso 2:
+//  A) seleccionar direccion donde vas a guardar todo.
+//	mkdir para crear carpeta.
+//	cd desktop para seleccionar carpeta por ej el escritorio ..
+    b) crear /iniciar la magia de git..
+	git init // para que funque toda la magia 
+creara una carpeta invisible/oculta, que no deberiamos tocar, ya que es lo que usa 
+git para poder grabar y todo lo que hace.
+(Esto del se deberia hacer 1 sola vez, la primera vez).
+
+//    b)  descargar/clonar todo lo que esta en la web a tu equipo,
+//    git clone " CADENA URL+.GIT"  // recordar no dejar espacios en blanco entre las comillas
+// ej :  git clone "https://github.com/henderito/appDevelopUTN.git"
+// una vez hecho estara creada la carpeta y todo lo que contenia el directorio en la web.
+
+
+paso 3:
+// una vez que quieran guardar....
+todo archivo modificado o que quieran subir tendria que estar en la carpeta creada 
+anteriormente por el "git clone"
+ cd appDevelopUTN
+
+
+una vez en el git, poniendo :
+git add * //agregaria todo lo que esta dentro de dicha carpeta, (suponiendo que no salieron de ahi)
+// pero eso no quiere decir que ya este todo subido al git, si no que solo esta seleccionado para subir.
+
+// tenemos que hacer el "comentario"
+git commit  -m "comentario hermoso y sensual."
+
+git push // subiria los archivos seleccionados anteriormente.. 
+
+una vez hecho eso ya estaria todo subido a git.
+
+// perdon, me habia equivocado de orden.
+
+Saludos, Nehuen
